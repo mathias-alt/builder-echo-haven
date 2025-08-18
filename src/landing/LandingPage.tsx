@@ -74,7 +74,8 @@ function ScrollTriggeredFade({ children, delay = 0 }: { children: React.ReactNod
 
 function Navigation() {
   const theme = useTheme();
-  
+  const navigate = useNavigate();
+
   return (
     <HideOnScroll>
       <Box
