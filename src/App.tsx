@@ -35,6 +35,8 @@ export default function App() {
       <CssBaseline enableColorScheme />
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="/dashboard" element={<CrmDashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
