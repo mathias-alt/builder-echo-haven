@@ -88,9 +88,15 @@ function FloatingLabelTextField({
             ),
             endAdornment: endIcon && (
               <InputAdornment position="end">
-                <IconButton onClick={onEndIconClick} edge="end">
-                  {endIcon}
-                </IconButton>
+                {onEndIconClick ? (
+                  <IconButton onClick={onEndIconClick} edge="end">
+                    {endIcon}
+                  </IconButton>
+                ) : (
+                  <Box sx={{ p: 1, display: 'flex', alignItems: 'center' }}>
+                    {endIcon}
+                  </Box>
+                )}
               </InputAdornment>
             ),
             sx: {
