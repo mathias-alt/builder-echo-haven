@@ -472,7 +472,11 @@ export default function SignupPage() {
                         showConfirmPassword ? <VisibilityOff /> : <Visibility />
                       )
                     }
-                    onEndIconClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    onEndIconClick={
+                      formData.confirmPassword && formData.password === formData.confirmPassword
+                        ? undefined
+                        : () => setShowConfirmPassword(!showConfirmPassword)
+                    }
                   />
 
                   {/* Terms and Conditions */}
