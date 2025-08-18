@@ -469,11 +469,10 @@ export default function SignupPage() {
                       formData.confirmPassword && formData.password === formData.confirmPassword ? (
                         <CheckCircle sx={{ color: theme.palette.success.main }} />
                       ) : (
-                        <IconButton onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
-                          {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
+                        showConfirmPassword ? <VisibilityOff /> : <Visibility />
                       )
                     }
+                    onEndIconClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   />
 
                   {/* Terms and Conditions */}
