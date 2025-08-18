@@ -115,6 +115,7 @@ function Navigation() {
             <Box sx={{ display: 'flex', gap: 1 }}>
               <Button
                 variant="text"
+                onClick={() => navigate('/login')}
                 sx={{
                   color: theme.palette.text.primary,
                   fontWeight: 500,
@@ -125,6 +126,7 @@ function Navigation() {
               </Button>
               <Button
                 variant="contained"
+                onClick={() => navigate('/signup')}
                 sx={{
                   textTransform: 'none',
                   fontWeight: 600,
