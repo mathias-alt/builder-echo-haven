@@ -5,6 +5,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import CrmDashboard from "./crm/CrmDashboard";
 import LandingPage from "./landing/LandingPage";
+import LoginPage from "./auth/LoginPage";
+import SignupPage from "./auth/SignupPage";
 
 function NotFound() {
   return (
