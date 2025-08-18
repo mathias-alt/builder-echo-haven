@@ -146,7 +146,8 @@ function Navigation() {
 
 function HeroSection() {
   const theme = useTheme();
-  
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
