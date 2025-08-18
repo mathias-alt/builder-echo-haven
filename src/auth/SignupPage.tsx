@@ -136,15 +136,15 @@ function FloatingLabelTextField({
           sx={{
             position: 'absolute',
             left: startIcon ? 48 : 16,
-            top: shouldFloat ? -8 : 16,
+            top: shouldFloat ? -8 : 8,
             fontSize: shouldFloat ? '0.75rem' : '1rem',
             fontWeight: shouldFloat ? 500 : 400,
-            color: error 
-              ? theme.palette.error.main 
-              : shouldFloat && focused 
-                ? theme.palette.primary.main 
+            color: error
+              ? theme.palette.error.main
+              : shouldFloat && focused
+                ? theme.palette.primary.main
                 : theme.palette.text.secondary,
-            backgroundColor: theme.palette.background.default,
+            backgroundColor: shouldFloat ? theme.palette.background.default : 'transparent',
             px: shouldFloat ? 1 : 0,
             pointerEvents: 'none',
             transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
