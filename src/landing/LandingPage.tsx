@@ -217,6 +217,7 @@ function HeroSection() {
                 variant="contained"
                 size="large"
                 endIcon={<ArrowForward />}
+                onClick={() => navigate('/signup')}
                 sx={{
                   textTransform: 'none',
                   fontWeight: 600,
