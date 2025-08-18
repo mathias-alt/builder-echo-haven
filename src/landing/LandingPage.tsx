@@ -404,7 +404,8 @@ function FeaturesSection() {
 
 function CTASection() {
   const theme = useTheme();
-  
+  const navigate = useNavigate();
+
   return (
     <Box
       sx={{
