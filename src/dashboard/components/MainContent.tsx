@@ -137,7 +137,11 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
         </Typography>
       </Box>
 
-      <Grid container spacing={3}>
+      <Grid container spacing={3} sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap'
+      }}>
         {/* Create New Canvas - Large Prominent Card */}
         <Grid item xs={12} md={8}>
           <Card
