@@ -148,7 +148,9 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
       <Grid container spacing={3} sx={{
         display: 'flex',
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start'
       }}>
         {/* Create New Canvas - Large Prominent Card */}
         <Grid item xs={12} md={8}>
