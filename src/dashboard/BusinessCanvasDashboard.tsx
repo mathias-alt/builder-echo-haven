@@ -32,7 +32,8 @@ export default function BusinessCanvasDashboard() {
         flexDirection: 'column',
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
-        height: '100vh',
+        height: 'auto',
+        flexGrow: 0,
         overflow: 'hidden'
       }}>
         {/* Sidebar */}
@@ -45,10 +46,9 @@ export default function BusinessCanvasDashboard() {
         <Box
           component="main"
           sx={{
-            flexGrow: 1,
+            flexGrow: 0,
             display: 'flex',
             flexDirection: 'column',
-            minHeight: '100vh',
             height: 'auto',
             alignSelf: 'stretch',
             transition: 'margin-left 0.3s ease',
@@ -66,7 +66,7 @@ export default function BusinessCanvasDashboard() {
           {/* Main Dashboard Content */}
           <Box
             sx={(theme) => ({
-              flexGrow: 1,
+              flexGrow: 0,
               backgroundColor: theme.vars
                 ? `rgba(${theme.vars.palette.background.defaultChannel} / 1)`
                 : alpha(theme.palette.background.default, 1),
