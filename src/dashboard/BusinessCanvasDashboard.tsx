@@ -72,7 +72,7 @@ export default function BusinessCanvasDashboard() {
                 : alpha(theme.palette.background.default, 1),
               overflow: 'auto',
               height: 'auto',
-              p: 3,
+              padding: '24px 24px 24px 310px',
             })}
           >
             <MainContent selectedCompany={selectedCompany} />
