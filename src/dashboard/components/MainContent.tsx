@@ -153,7 +153,14 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
         alignItems: 'flex-start'
       }}>
         {/* Create New Canvas - Large Prominent Card */}
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={8} sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 3,
+          height: 'auto',
+          alignSelf: 'center',
+          marginBottom: 'auto'
+        }}>
           <Card
             sx={{
               p: 4,
