@@ -74,6 +74,7 @@ export default function TopNavigation({
         backdropFilter: 'blur(20px)',
         borderBottom: `1px solid ${alpha(theme.palette.divider, 0.1)}`,
         color: theme.palette.text.primary,
+        paddingLeft: '310px',
       }}
     >
       <Toolbar sx={{ justifyContent: 'space-between', py: 1 }}>
