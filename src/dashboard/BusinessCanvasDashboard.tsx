@@ -49,6 +49,8 @@ export default function BusinessCanvasDashboard() {
             display: 'flex',
             flexDirection: 'column',
             minHeight: '100vh',
+            height: 'auto',
+            alignSelf: 'stretch',
             transition: 'margin-left 0.3s ease',
             marginLeft: sidebarOpen ? 0 : { md: '-280px' },
           }}
