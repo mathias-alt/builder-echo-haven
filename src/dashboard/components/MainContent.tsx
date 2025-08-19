@@ -114,7 +114,15 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
   };
 
   return (
-    <Box sx={{ width: '100%', maxWidth: 1400, mx: 'auto' }}>
+    <Box sx={{
+      width: '100%',
+      maxWidth: 1400,
+      mx: 'auto',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+    }}>
       {/* Welcome Header */}
       <Box sx={{ mb: 4 }}>
         <Typography
