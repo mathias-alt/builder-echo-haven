@@ -4,6 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import CrmDashboard from "./crm/CrmDashboard";
+import BusinessCanvasDashboard from "./dashboard/BusinessCanvasDashboard";
 import LandingPage from "./landing/LandingPage";
 import LoginPage from "./auth/LoginPage";
 import SignupPage from "./auth/SignupPage";
