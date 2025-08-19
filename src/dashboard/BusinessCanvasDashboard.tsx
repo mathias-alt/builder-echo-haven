@@ -27,7 +27,14 @@ export default function BusinessCanvasDashboard() {
   return (
     <AppTheme>
       <CssBaseline enableColorScheme />
-      <Box sx={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
+      <Box sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        height: '100vh',
+        overflow: 'hidden'
+      }}>
         {/* Sidebar */}
         <Sidebar 
           open={sidebarOpen} 
