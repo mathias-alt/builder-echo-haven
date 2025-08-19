@@ -139,7 +139,7 @@ function FloatingLabelTextField({
           component="label"
           sx={{
             position: 'absolute',
-            left: startIcon ? 39 : 16,
+            left: startIcon ? 35 : 16,
             top: shouldFloat ? -10 : 8,
             fontSize: shouldFloat ? '0.75rem' : '1rem',
             fontWeight: shouldFloat ? 500 : 400,
