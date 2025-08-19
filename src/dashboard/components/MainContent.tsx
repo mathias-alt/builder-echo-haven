@@ -443,7 +443,11 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
               <Typography variant="h6" sx={{ fontWeight: 600, mb: 3 }}>
                 Canvas Progress
               </Typography>
-              <Grid container spacing={3}>
+              <Grid container spacing={3} sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap'
+              }}>
                 {canvasProgress.map((canvas, index) => (
                   <Grid item xs={12} sm={6} md={3} key={index}>
                     <Box
