@@ -213,9 +213,8 @@ export default function TeamManagementPage() {
     }
   };
 
-  const handleInvite = async (invitations: any[]) => {
-    // Handle invitation logic
-    console.log('Sending invitations:', invitations);
+  const handleInvite = () => {
+    navigate('/invite');
   };
 
   const handleBulkDelete = () => {
