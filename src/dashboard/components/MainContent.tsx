@@ -161,6 +161,7 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
         }}>
           {/* Create New Canvas - Large Prominent Card */}
           <Card
+            onClick={() => navigate('/canvas')}
             sx={{
               p: 4,
               background: `linear-gradient(135deg, ${alpha(theme.palette.primary.main, 0.1)} 0%, ${alpha(theme.palette.primary.main, 0.05)} 100%)`,
