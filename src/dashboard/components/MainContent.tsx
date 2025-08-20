@@ -31,6 +31,7 @@ import {
   CalendarToday,
   PersonAdd,
 } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 interface MainContentProps {
   selectedCompany: string;
