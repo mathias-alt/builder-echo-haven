@@ -229,6 +229,10 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
                 variant="contained"
                 size="large"
                 startIcon={<Add />}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigate('/canvas');
+                }}
                 sx={{
                   px: 4,
                   py: 1.5,
