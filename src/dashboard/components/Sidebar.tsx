@@ -257,6 +257,8 @@ export default function Sidebar({ open }: SidebarProps) {
                 onClick={() => {
                   if (item.text === 'Team Members') {
                     navigate('/team');
+                  } else if (item.text === 'Company Settings') {
+                    navigate('/company/settings');
                   }
                 }}
                 sx={{
