@@ -514,7 +514,7 @@ export default function TeamManagementPage() {
                 <Button
                   variant="contained"
                   startIcon={<PersonAdd />}
-                  onClick={() => setInviteDialogOpen(true)}
+                  onClick={() => navigate('/invite')}
                 >
                   Invite Team Members
                 </Button>
