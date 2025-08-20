@@ -13,6 +13,10 @@ export default function BusinessCanvasDashboard() {
   const [sidebarOpen, setSidebarOpen] = React.useState(true);
   const [selectedCompany, setSelectedCompany] = React.useState('Acme Corp');
 
+  React.useEffect(() => {
+    document.title = 'Dashboard - Flourishing Business Canvas';
+  }, []);
+
   const handleSidebarToggle = () => {
     setSidebarOpen(!sidebarOpen);
   };
