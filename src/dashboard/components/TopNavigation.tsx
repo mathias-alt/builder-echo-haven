@@ -54,19 +54,6 @@ export default function TopNavigation({
     setUserMenuAnchor(null);
   };
 
-  const handleCompanyMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setCompanyMenuAnchor(event.currentTarget);
-  };
-
-  const handleCompanyMenuClose = () => {
-    setCompanyMenuAnchor(null);
-  };
-
-  const handleCompanySelect = (company: string) => {
-    onCompanyChange(company);
-    handleCompanyMenuClose();
-  };
-
   return (
     <AppBar
       position="sticky"
