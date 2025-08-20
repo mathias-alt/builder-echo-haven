@@ -26,6 +26,7 @@ import {
   ExpandMore,
   FiberManualRecord,
 } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 interface SidebarProps {
   open: boolean;
