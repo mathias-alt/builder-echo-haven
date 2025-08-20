@@ -254,6 +254,11 @@ export default function Sidebar({ open }: SidebarProps) {
           {otherItems.map((item) => (
             <ListItem key={item.text} disablePadding sx={{ mb: 0.5 }}>
               <ListItemButton
+                onClick={() => {
+                  if (item.text === 'Team Members') {
+                    navigate('/team');
+                  }
+                }}
                 sx={{
                   borderRadius: 2,
                   py: 1.5,
