@@ -34,6 +34,10 @@ const xThemeComponents = {
 };
 
 export default function CrmDashboard() {
+  React.useEffect(() => {
+    document.title = 'CRM - Flourishing Business Canvas';
+  }, []);
+
   return (
     <AppTheme themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />
