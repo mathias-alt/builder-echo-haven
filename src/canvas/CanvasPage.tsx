@@ -249,110 +249,16 @@ export default function CanvasPage() {
               },
             }}
           >
-            {sections.map((section) => {
-              const colors = getCategoryColor(section.category);
-              const isEditing = editingSection === section.id;
-              
-              return (
-                <Card
-                  key={section.id}
-                  sx={{
-                    gridArea: section.gridArea,
-                    backgroundColor: colors.light,
-                    border: `2px solid ${colors.border}`,
-                    borderRadius: 2,
-                    '&:hover': {
-                      borderColor: colors.main,
-                      boxShadow: `0 4px 20px ${alpha(colors.main, 0.2)}`,
-                    },
-                    transition: 'all 0.2s ease',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }}
-                  onClick={() => !isEditing && handleSectionEdit(section.id)}
-                >
-                  <Box
-                    sx={{
-                      backgroundColor: colors.main,
-                      color: 'white',
-                      p: 1.5,
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                    }}
-                  >
-                    <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
-                      {section.title}
-                    </Typography>
-                    <IconButton 
-                      size="small" 
-                      sx={{ color: 'white' }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleSectionEdit(section.id);
-                      }}
-                    >
-                      {isEditing ? <Save /> : <Edit />}
-                    </IconButton>
-                  </Box>
-                  
-                  <CardContent sx={{ flex: 1, p: 2 }}>
-                    {isEditing ? (
-                      <TextField
-                        fullWidth
-                        multiline
-                        rows={6}
-                        value={section.content}
-                        onChange={(e) => handleSectionUpdate(section.id, e.target.value)}
-                        onBlur={(e) => handleSectionSave(section.id, e.target.value)}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Escape') {
-                            setEditingSection(null);
-                          }
-                          if (e.key === 'Enter' && e.ctrlKey) {
-                            handleSectionSave(section.id, section.content);
-                          }
-                        }}
-                        placeholder="Click to add content..."
-                        variant="outlined"
-                        autoFocus
-                        sx={{
-                          '& .MuiOutlinedInput-root': {
-                            backgroundColor: 'background.paper',
-                          },
-                        }}
-                      />
-                    ) : (
-                      <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                        {section.content ? (
-                          <Typography variant="body2" sx={{ whiteSpace: 'pre-wrap' }}>
-                            {section.content}
-                          </Typography>
-                        ) : (
-                          <Box 
-                            sx={{ 
-                              flex: 1, 
-                              display: 'flex', 
-                              alignItems: 'center', 
-                              justifyContent: 'center',
-                              color: theme.palette.text.secondary,
-                            }}
-                          >
-                            <Box sx={{ textAlign: 'center' }}>
-                              <Add sx={{ fontSize: 32, mb: 1, opacity: 0.5 }} />
-                              <Typography variant="body2">
-                                Click to add content
-                              </Typography>
-                            </Box>
-                          </Box>
-                        )}
-                      </Box>
-                    )}
-                  </CardContent>
-                </Card>
-              );
-            })}
+            {sections.map((section) => (
+              <CanvasSection
+                key={section.id}
+                section={section}
+                isLoading={isLoading}
+                onAddNote={handleAddNote}
+                onUpdateNote={handleUpdateNote}
+                onDeleteNote={handleDeleteNote}
+              />
+            ))}
           </Box>
         </Container>
       </Box>
