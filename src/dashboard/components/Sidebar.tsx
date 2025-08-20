@@ -67,7 +67,7 @@ export default function Sidebar({ open }: SidebarProps) {
   const otherItems = [
     { text: 'Team Members', icon: <People />, badge: 12 },
     { text: 'Analytics', icon: <Analytics /> },
-    { text: 'Settings', icon: <Settings /> },
+    { text: 'Company Settings', icon: <Settings /> },
     { text: 'Help & Support', icon: <Help /> },
   ];
 
