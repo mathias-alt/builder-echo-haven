@@ -8,6 +8,7 @@ import BusinessCanvasDashboard from "./dashboard/BusinessCanvasDashboard";
 import LandingPage from "./landing/LandingPage";
 import LoginPage from "./auth/LoginPage";
 import SignupPage from "./auth/SignupPage";
+import CanvasPage from "./canvas/CanvasPage";
 
 function NotFound() {
   return (
