@@ -10,6 +10,8 @@ import LoginPage from "./auth/LoginPage";
 import SignupPage from "./auth/SignupPage";
 import CanvasPage from "./canvas/CanvasPage";
 import TeamManagementPage from "./team/TeamManagementPage";
+import InvitationLandingPage from "./invite/InvitationLandingPage";
+import JoinCompanyPage from "./invite/JoinCompanyPage";
 
 function NotFound() {
   return (
