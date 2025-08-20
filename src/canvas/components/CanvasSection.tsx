@@ -15,8 +15,8 @@ import {
 import {
   Add,
   Edit,
-  EcoOutlined as Eco,
-  Park as Nature,
+  Energy as Eco,
+  Forest as Nature,
   Recycling,
   Thermostat as ThermostatAuto,
   Pets,
@@ -29,7 +29,7 @@ import {
   Person as PersonPin,
   Share,
   AttachMoney,
-  CurrencyExchange,
+  Money as CurrencyExchange,
   MoreVert,
 } from '@mui/icons-material';
 import StickyNote, { StickyNoteData } from './StickyNote';
