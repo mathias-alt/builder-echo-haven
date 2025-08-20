@@ -204,13 +204,23 @@ export default function CanvasPage() {
             >
               Save
             </Button>
-            <Button 
-              startIcon={<Download />} 
-              variant="outlined" 
+            <Button
+              startIcon={<Download />}
+              variant="outlined"
               size="small"
+              onClick={() => setExportModalOpen(true)}
               sx={{ textTransform: 'none' }}
             >
               Export
+            </Button>
+            <Button
+              startIcon={<Print />}
+              variant="outlined"
+              size="small"
+              onClick={handlePrint}
+              sx={{ textTransform: 'none' }}
+            >
+              Print
             </Button>
             <Button 
               startIcon={<Share />} 
