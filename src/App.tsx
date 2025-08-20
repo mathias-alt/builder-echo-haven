@@ -39,7 +39,7 @@ export default function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/dashboard" element={<BusinessCanvasDashboard />} />
-        <Route path="/crm" element={<CrmDashboard />} />
+        <Route path="/crm/*" element={<CrmDashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
