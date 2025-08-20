@@ -249,6 +249,10 @@ function PasswordStrengthIndicator({ password }: { password: string }) {
 export default function SignupPage() {
   const theme = useTheme();
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    document.title = 'Sign Up - Flourishing Business Canvas';
+  }, []);
   
   const [formData, setFormData] = React.useState({
     firstName: '',
