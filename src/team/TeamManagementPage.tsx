@@ -51,6 +51,7 @@ import {
 import TeamMemberCard from './components/TeamMemberCard';
 import InviteTeamMemberDialog from './components/InviteTeamMemberDialog';
 import { TeamMember, PendingInvitation, TeamActivity, ViewMode, TeamFilters, TeamSort } from './types';
+import { useNavigate } from 'react-router-dom';
 
 // Mock data
 const mockTeamMembers: TeamMember[] = [
