@@ -329,6 +329,13 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
             </Box>
           </Box>
 
+          {/* Company Info */}
+          <CompanyWidget
+            companyName={selectedCompany}
+            memberCount={teamMembers.length}
+            hasCompany={true}
+          />
+
           {/* Team Members */}
           <Card
             sx={{
