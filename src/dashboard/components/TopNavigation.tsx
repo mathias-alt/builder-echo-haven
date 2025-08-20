@@ -31,8 +31,9 @@ import { CompanySwitcher, UserCompany } from '../../components/CompanySwitcher';
 interface TopNavigationProps {
   onSidebarToggle: () => void;
   selectedCompany: string;
-  companies: string[];
-  onCompanyChange: (company: string) => void;
+  companies: UserCompany[];
+  onCompanyChange: (companyId: string) => Promise<void>;
+  onCreateCompany: () => void;
 }
 
 export default function TopNavigation({
