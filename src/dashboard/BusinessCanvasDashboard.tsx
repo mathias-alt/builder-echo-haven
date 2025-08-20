@@ -8,6 +8,8 @@ import AppTheme from '../shared-theme/AppTheme';
 import TopNavigation from './components/TopNavigation';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
+import { UserCompany } from '../components/CompanySwitcher';
+import { useNavigate } from 'react-router-dom';
 
 export default function BusinessCanvasDashboard() {
   const [sidebarOpen, setSidebarOpen] = React.useState(true);
