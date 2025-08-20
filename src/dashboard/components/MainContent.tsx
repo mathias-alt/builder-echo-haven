@@ -114,9 +114,9 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
   };
 
   return (
-    <Box sx={{
-      width: '100%',
-      maxWidth: 1400,
+    <Box sx={{ 
+      width: '100%', 
+      maxWidth: 1400, 
       mx: 'auto',
       display: 'flex',
       flexDirection: 'column',
@@ -152,15 +152,13 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
         justifyContent: 'flex-start',
         alignItems: 'flex-start'
       }}>
-        {/* Create New Canvas - Large Prominent Card */}
-        <Grid item xs={12} md={8} sx={{
+        {/* Main Column */}
+        <Box sx={{
           display: 'flex',
           flexDirection: 'column',
-          gap: 3,
-          height: 'auto',
-          alignSelf: 'center',
-          marginBottom: 'auto'
+          gap: 3
         }}>
+          {/* Create New Canvas - Large Prominent Card */}
           <Card
             sx={{
               p: 4,
@@ -242,128 +240,89 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
               </Button>
             </CardContent>
           </Card>
-        </Grid>
 
-        {/* Quick Stats */}
-        <Grid item xs={12} md={4}>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <Card
-                sx={{
-                  p: 2,
-                  borderRadius: 3,
-                  textAlign: 'center',
-                  '&:hover': {
-                    transform: 'translateY(-2px)',
-                    boxShadow: `0 8px 32px ${alpha(theme.palette.common.black, 0.1)}`,
-                  },
-                  transition: 'all 0.2s ease',
-                }}
-              >
-                <Typography variant="h4" sx={{ fontWeight: 700, color: theme.palette.primary.main }}>
-                  4
-                </Typography>
-                <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
-                  Active Canvases
-                </Typography>
-              </Card>
-            </Grid>
-            <Grid item xs={6}>
-              <Card
-                sx={{
-                  p: 2,
-                  borderRadius: 3,
-                  textAlign: 'center',
-                  '&:hover': {
-                    transform: 'translateY(-2px)',
-                    boxShadow: `0 8px 32px ${alpha(theme.palette.common.black, 0.1)}`,
-                  },
-                  transition: 'all 0.2s ease',
-                }}
-              >
-                <Typography variant="h4" sx={{ fontWeight: 700, color: theme.palette.success.main }}>
-                  {teamMembers.length}
-                </Typography>
-                <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
-                  Team Members
-                </Typography>
-              </Card>
-            </Grid>
-          </Grid>
-        </Grid>
-
-        {/* Recent Activity */}
-        <Grid item xs={12} md={6}>
-          <Card
-            sx={{
-              borderRadius: 3,
-              '&:hover': {
-                boxShadow: `0 8px 32px ${alpha(theme.palette.common.black, 0.1)}`,
+          {/* Quick Stats */}
+          <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: 'auto',
+            alignSelf: 'stretch'
+          }}>
+            <Box sx={{
+              gap: 2,
+              display: 'flex',
+              '@media (max-width: 991px)': {
+                flexDirection: 'column',
+                alignItems: 'stretch',
+                gap: '0px',
               },
-              transition: 'all 0.2s ease',
-            }}
-          >
-            <CardContent sx={{ p: 3 }}>
-              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                  Recent Activity
-                </Typography>
-                <IconButton size="small">
-                  <MoreVert />
-                </IconButton>
+            }}>
+              <Box sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                lineHeight: 'normal',
+                width: '50%',
+                marginLeft: '0px',
+                '@media (max-width: 991px)': {
+                  width: '100%',
+                  marginLeft: 0,
+                },
+              }}>
+                <Card
+                  sx={{
+                    p: 2,
+                    borderRadius: 3,
+                    textAlign: 'center',
+                    '&:hover': {
+                      transform: 'translateY(-2px)',
+                      boxShadow: `0 8px 32px ${alpha(theme.palette.common.black, 0.1)}`,
+                    },
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  <Typography variant="h4" sx={{ fontWeight: 700, color: theme.palette.primary.main }}>
+                    4
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                    Active Canvases
+                  </Typography>
+                </Card>
               </Box>
-              <List sx={{ p: 0 }}>
-                {recentActivity.map((activity, index) => (
-                  <React.Fragment key={index}>
-                    <ListItem
-                      sx={{
-                        px: 0,
-                        py: 1.5,
-                        '&:hover': {
-                          backgroundColor: alpha(theme.palette.action.hover, 0.05),
-                          borderRadius: 1,
-                        },
-                      }}
-                    >
-                      <ListItemIcon sx={{ minWidth: 32 }}>
-                        {getActivityIcon(activity.type)}
-                      </ListItemIcon>
-                      <ListItemText
-                        primary={
-                          <Box>
-                            <Typography
-                              component="span"
-                              variant="body2"
-                              sx={{ fontWeight: 500 }}
-                            >
-                              {activity.action}
-                            </Typography>
-                            <Typography
-                              component="span"
-                              variant="body2"
-                              sx={{ color: theme.palette.primary.main, ml: 1 }}
-                            >
-                              {activity.item}
-                            </Typography>
-                          </Box>
-                        }
-                        secondary={
-                          <Typography variant="caption" sx={{ color: theme.palette.text.secondary }}>
-                            by {activity.user} • {activity.time}
-                          </Typography>
-                        }
-                      />
-                    </ListItem>
-                    {index < recentActivity.length - 1 && <Divider sx={{ my: 0.5 }} />}
-                  </React.Fragment>
-                ))}
-              </List>
-            </CardContent>
-          </Card>
-        </Grid>
+              <Box sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                lineHeight: 'normal',
+                width: '50%',
+                marginLeft: '20px',
+                '@media (max-width: 991px)': {
+                  width: '100%',
+                  marginLeft: 0,
+                },
+              }}>
+                <Card
+                  sx={{
+                    p: 2,
+                    borderRadius: 3,
+                    textAlign: 'center',
+                    '&:hover': {
+                      transform: 'translateY(-2px)',
+                      boxShadow: `0 8px 32px ${alpha(theme.palette.common.black, 0.1)}`,
+                    },
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  <Typography variant="h4" sx={{ fontWeight: 700, color: theme.palette.success.main }}>
+                    {teamMembers.length}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
+                    Team Members
+                  </Typography>
+                </Card>
+              </Box>
+            </Box>
+          </Box>
 
-        {/* Team Members */}
-        <Grid item xs={12} md={6}>
+          {/* Team Members */}
           <Card
             sx={{
               borderRadius: 3,
@@ -447,6 +406,76 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
               )}
             </CardContent>
           </Card>
+        </Box>
+
+        {/* Recent Activity */}
+        <Grid item xs={12} md={6}>
+          <Card
+            sx={{
+              borderRadius: 3,
+              '&:hover': {
+                boxShadow: `0 8px 32px ${alpha(theme.palette.common.black, 0.1)}`,
+              },
+              transition: 'all 0.2s ease',
+            }}
+          >
+            <CardContent sx={{ p: 3 }}>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                  Recent Activity
+                </Typography>
+                <IconButton size="small">
+                  <MoreVert />
+                </IconButton>
+              </Box>
+              <List sx={{ p: 0 }}>
+                {recentActivity.map((activity, index) => (
+                  <React.Fragment key={index}>
+                    <ListItem
+                      sx={{
+                        px: 0,
+                        py: 1.5,
+                        '&:hover': {
+                          backgroundColor: alpha(theme.palette.action.hover, 0.05),
+                          borderRadius: 1,
+                        },
+                      }}
+                    >
+                      <ListItemIcon sx={{ minWidth: 32 }}>
+                        {getActivityIcon(activity.type)}
+                      </ListItemIcon>
+                      <ListItemText
+                        primary={
+                          <Box>
+                            <Typography
+                              component="span"
+                              variant="body2"
+                              sx={{ fontWeight: 500 }}
+                            >
+                              {activity.action}
+                            </Typography>
+                            <Typography
+                              component="span"
+                              variant="body2"
+                              sx={{ color: theme.palette.primary.main, ml: 1 }}
+                            >
+                              {activity.item}
+                            </Typography>
+                          </Box>
+                        }
+                        secondary={
+                          <Typography variant="caption" sx={{ color: theme.palette.text.secondary }}>
+                            by {activity.user} • {activity.time}
+                          </Typography>
+                        }
+                      />
+                    </ListItem>
+                    {index < recentActivity.length - 1 && <Divider sx={{ my: 0.5 }} />}
+                  </React.Fragment>
+                ))}
+              </List>
+            </CardContent>
+          </Card>
         </Grid>
 
         {/* Canvas Progress */}
@@ -464,7 +493,7 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
               <Typography variant="h6" sx={{ fontWeight: 600, mb: 3 }}>
                 Canvas Progress
               </Typography>
-              <Grid container spacing={3} sx={{
+              <Grid container spacing={3} sx={{ 
                 display: 'flex',
                 flexDirection: 'row',
                 flexWrap: 'wrap'
