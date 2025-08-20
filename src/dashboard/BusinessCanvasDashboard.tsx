@@ -128,7 +128,8 @@ export default function BusinessCanvasDashboard() {
             onSidebarToggle={handleSidebarToggle}
             selectedCompany={selectedCompany}
             companies={companies}
-            onCompanyChange={setSelectedCompany}
+            onCompanyChange={handleCompanySwitch}
+            onCreateCompany={handleCreateCompany}
           />
           
           {/* Main Dashboard Content */}
