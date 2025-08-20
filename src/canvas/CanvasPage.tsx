@@ -1,32 +1,28 @@
 import * as React from 'react';
 import {
   Box,
-  Card,
-  CardContent,
-  Typography,
   Button,
   IconButton,
-  Chip,
   useTheme,
   alpha,
   TextField,
   Toolbar,
   AppBar,
   Container,
+  Typography,
 } from '@mui/material';
 import {
   Save,
   Download,
   Share,
   MoreVert,
-  Edit,
-  Add,
   CloudDone,
   CloudUpload,
-  Print,
   Undo,
   Redo,
 } from '@mui/icons-material';
+import CanvasSection, { CanvasSectionData } from './components/CanvasSection';
+import { StickyNoteData } from './components/StickyNote';
 
 interface CanvasSection {
   id: string;
