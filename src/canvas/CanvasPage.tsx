@@ -111,6 +111,22 @@ export default function CanvasPage() {
     setTimeout(() => setAutoSaveStatus('saved'), 1000);
   };
 
+  const handleExport = async (settings: ExportSettings) => {
+    // Simulate export process
+    console.log('Exporting canvas with settings:', settings);
+
+    // In a real app, this would:
+    // 1. Generate the export based on settings
+    // 2. Upload to storage
+    // 3. Return download/share URLs
+
+    await new Promise(resolve => setTimeout(resolve, 3000));
+  };
+
+  const handlePrint = () => {
+    window.print();
+  };
+
   const AutoSaveIndicator = () => {
     const getStatusIcon = () => {
       switch (autoSaveStatus) {
