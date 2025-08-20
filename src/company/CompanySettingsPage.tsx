@@ -419,9 +419,12 @@ export default function CompanySettingsPage() {
             </Button>
           </Box>
           
-          <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
-            Status: <Chip label={billingInfo.status} color="success" size="small" />
-          </Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
+            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+              Status:
+            </Typography>
+            <Chip label={billingInfo.status} color="success" size="small" />
+          </Box>
           
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             Next billing date: {billingInfo.nextInvoiceDate?.toLocaleDateString()}
