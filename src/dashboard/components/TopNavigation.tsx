@@ -96,62 +96,14 @@ export default function TopNavigation({
           </Box>
           
           {/* Company Switcher */}
-          {companies.length > 1 && (
-            <Box sx={{ ml: 2 }}>
-              <Button
-                onClick={handleCompanyMenuOpen}
-                endIcon={<KeyboardArrowDown />}
-                sx={{
-                  textTransform: 'none',
-                  color: theme.palette.text.primary,
-                  backgroundColor: alpha(theme.palette.background.paper, 0.5),
-                  border: `1px solid ${alpha(theme.palette.divider, 0.2)}`,
-                  borderRadius: 2,
-                  px: 2,
-                  py: 0.5,
-                  '&:hover': {
-                    backgroundColor: alpha(theme.palette.background.paper, 0.8),
-                  },
-                }}
-              >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <Avatar sx={{ width: 24, height: 24, fontSize: '0.75rem' }}>
-                    {selectedCompany.charAt(0)}
-                  </Avatar>
-                  <Typography variant="body2" sx={{ fontWeight: 500 }}>
-                    {selectedCompany}
-                  </Typography>
-                </Box>
-              </Button>
-              
-              <Menu
-                anchorEl={companyMenuAnchor}
-                open={Boolean(companyMenuAnchor)}
-                onClose={handleCompanyMenuClose}
-                PaperProps={{
-                  sx: {
-                    borderRadius: 2,
-                    minWidth: 200,
-                    boxShadow: `0 12px 40px ${alpha(theme.palette.common.black, 0.1)}`,
-                  },
-                }}
-              >
-                {companies.map((company) => (
-                  <MenuItem
-                    key={company}
-                    onClick={() => handleCompanySelect(company)}
-                    selected={company === selectedCompany}
-                    sx={{ gap: 1 }}
-                  >
-                    <Avatar sx={{ width: 24, height: 24, fontSize: '0.75rem' }}>
-                      {company.charAt(0)}
-                    </Avatar>
-                    <Typography variant="body2">{company}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-          )}
+          <Box sx={{ ml: 2 }}>
+            <CompanySwitcher
+              companies={companies}
+              currentCompanyId={selectedCompany}
+              onCompanySwitch={onCompanyChange}
+              onCreateCompany={onCreateCompany}
+            />
+          </Box>
         </Box>
 
         {/* Right Section */}
