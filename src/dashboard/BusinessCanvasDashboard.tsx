@@ -144,7 +144,7 @@ export default function BusinessCanvasDashboard() {
               padding: '24px 24px 24px 310px',
             })}
           >
-            <MainContent selectedCompany={selectedCompany} />
+            <MainContent selectedCompany={currentCompany?.name || 'Company'} />
           </Box>
         </Box>
       </Box>
