@@ -182,6 +182,10 @@ function FloatingLabelTextField({
 export default function LoginPage() {
   const theme = useTheme();
   const navigate = useNavigate();
+
+  React.useEffect(() => {
+    document.title = 'Login - Flourishing Business Canvas';
+  }, []);
   
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
