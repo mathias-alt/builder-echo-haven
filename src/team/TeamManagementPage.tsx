@@ -526,7 +526,7 @@ export default function TeamManagementPage() {
         {/* Floating Action Button */}
         <Fab
           color="primary"
-          onClick={() => setInviteDialogOpen(true)}
+          onClick={() => navigate('/invite')}
           sx={{
             position: 'fixed',
             bottom: 24,
