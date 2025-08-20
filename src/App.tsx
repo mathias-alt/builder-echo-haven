@@ -12,6 +12,7 @@ import CanvasPage from "./canvas/CanvasPage";
 import TeamManagementPage from "./team/TeamManagementPage";
 import InvitationLandingPage from "./invite/InvitationLandingPage";
 import JoinCompanyPage from "./invite/JoinCompanyPage";
+import InvitePage from "./invite/InvitePage";
 
 function NotFound() {
   return (
