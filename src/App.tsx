@@ -9,6 +9,7 @@ import LandingPage from "./landing/LandingPage";
 import LoginPage from "./auth/LoginPage";
 import SignupPage from "./auth/SignupPage";
 import CanvasPage from "./canvas/CanvasPage";
+import TeamManagementPage from "./team/TeamManagementPage";
 
 function NotFound() {
   return (
