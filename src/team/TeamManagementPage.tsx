@@ -124,6 +124,7 @@ const mockPendingInvitations: PendingInvitation[] = [
 
 export default function TeamManagementPage() {
   const theme = useTheme();
+  const navigate = useNavigate();
   const [viewMode, setViewMode] = React.useState<ViewMode>('cards');
   const [selectedMembers, setSelectedMembers] = React.useState<string[]>([]);
   const [inviteDialogOpen, setInviteDialogOpen] = React.useState(false);
