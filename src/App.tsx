@@ -46,6 +46,7 @@ export default function App() {
         <Route path="/dashboard" element={<BusinessCanvasDashboard />} />
         <Route path="/canvas" element={<CanvasPage />} />
         <Route path="/team" element={<TeamManagementPage />} />
+        <Route path="/invite" element={<InvitePage />} />
         <Route path="/invite/:token" element={<InvitationLandingPage />} />
         <Route path="/invite/join" element={<JoinCompanyPage />} />
         <Route path="/crm/*" element={<CrmDashboard />} />
