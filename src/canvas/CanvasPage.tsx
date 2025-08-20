@@ -20,6 +20,7 @@ import {
   CloudUpload,
   Undo,
   Redo,
+  Print,
 } from '@mui/icons-material';
 import CanvasSection, { CanvasSectionData } from './components/CanvasSection';
 import { StickyNoteData } from './components/StickyNote';
