@@ -24,35 +24,27 @@ import {
 import CanvasSection, { CanvasSectionData } from './components/CanvasSection';
 import { StickyNoteData } from './components/StickyNote';
 
-interface CanvasSection {
-  id: string;
-  title: string;
-  category: 'environment' | 'society' | 'process';
-  content: string;
-  gridArea: string;
-}
-
-const canvasSections: CanvasSection[] = [
+const initialSections: CanvasSectionData[] = [
   // Environment sections (green)
-  { id: 'sustainability', title: 'Sustainability Impact', category: 'environment', content: '', gridArea: 'sustainability' },
-  { id: 'resources', title: 'Natural Resources', category: 'environment', content: '', gridArea: 'resources' },
-  { id: 'circular', title: 'Circular Economy', category: 'environment', content: '', gridArea: 'circular' },
-  { id: 'climate', title: 'Climate Action', category: 'environment', content: '', gridArea: 'climate' },
-  { id: 'biodiversity', title: 'Biodiversity', category: 'environment', content: '', gridArea: 'biodiversity' },
-  
+  { id: 'sustainability', title: 'Sustainability Impact', category: 'environment', notes: [], gridArea: 'sustainability' },
+  { id: 'resources', title: 'Natural Resources', category: 'environment', notes: [], gridArea: 'resources' },
+  { id: 'circular', title: 'Circular Economy', category: 'environment', notes: [], gridArea: 'circular' },
+  { id: 'climate', title: 'Climate Action', category: 'environment', notes: [], gridArea: 'climate' },
+  { id: 'biodiversity', title: 'Biodiversity', category: 'environment', notes: [], gridArea: 'biodiversity' },
+
   // Society/Economy sections (yellow)
-  { id: 'stakeholders', title: 'Key Stakeholders', category: 'society', content: '', gridArea: 'stakeholders' },
-  { id: 'community', title: 'Community Impact', category: 'society', content: '', gridArea: 'community' },
-  { id: 'governance', title: 'Governance', category: 'society', content: '', gridArea: 'governance' },
-  { id: 'wellbeing', title: 'Employee Wellbeing', category: 'society', content: '', gridArea: 'wellbeing' },
-  { id: 'equity', title: 'Social Equity', category: 'society', content: '', gridArea: 'equity' },
-  
+  { id: 'stakeholders', title: 'Key Stakeholders', category: 'society', notes: [], gridArea: 'stakeholders' },
+  { id: 'community', title: 'Community Impact', category: 'society', notes: [], gridArea: 'community' },
+  { id: 'governance', title: 'Governance', category: 'society', notes: [], gridArea: 'governance' },
+  { id: 'wellbeing', title: 'Employee Wellbeing', category: 'society', notes: [], gridArea: 'wellbeing' },
+  { id: 'equity', title: 'Social Equity', category: 'society', notes: [], gridArea: 'equity' },
+
   // Process/Value/People sections (teal)
-  { id: 'value', title: 'Value Proposition', category: 'process', content: '', gridArea: 'value' },
-  { id: 'customers', title: 'Customer Segments', category: 'process', content: '', gridArea: 'customers' },
-  { id: 'channels', title: 'Channels', category: 'process', content: '', gridArea: 'channels' },
-  { id: 'revenue', title: 'Revenue Streams', category: 'process', content: '', gridArea: 'revenue' },
-  { id: 'costs', title: 'Cost Structure', category: 'process', content: '', gridArea: 'costs' },
+  { id: 'value', title: 'Value Proposition', category: 'process', notes: [], gridArea: 'value' },
+  { id: 'customers', title: 'Customer Segments', category: 'process', notes: [], gridArea: 'customers' },
+  { id: 'channels', title: 'Channels', category: 'process', notes: [], gridArea: 'channels' },
+  { id: 'revenue', title: 'Revenue Streams', category: 'process', notes: [], gridArea: 'revenue' },
+  { id: 'costs', title: 'Cost Structure', category: 'process', notes: [], gridArea: 'costs' },
 ];
 
 export default function CanvasPage() {
