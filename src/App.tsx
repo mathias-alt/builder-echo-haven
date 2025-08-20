@@ -51,6 +51,8 @@ export default function App() {
         <Route path="/invite" element={<InvitePage />} />
         <Route path="/invite/:token" element={<InvitationLandingPage />} />
         <Route path="/invite/join" element={<JoinCompanyPage />} />
+        <Route path="/company/create" element={<CreateCompanyPage />} />
+        <Route path="/company/settings" element={<CompanySettingsPage />} />
         <Route path="/crm/*" element={<CrmDashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
