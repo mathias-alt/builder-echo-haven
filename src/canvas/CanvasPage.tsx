@@ -58,45 +58,54 @@ export default function CanvasPage() {
     document.title = 'Canvas - Flourishing Business Canvas';
   }, []);
 
-  const getCategoryColor = (category: CanvasSection['category']) => {
-    switch (category) {
-      case 'environment':
-        return {
-          main: theme.palette.success.main,
-          light: alpha(theme.palette.success.main, 0.1),
-          border: alpha(theme.palette.success.main, 0.3),
-        };
-      case 'society':
-        return {
-          main: theme.palette.warning.main,
-          light: alpha(theme.palette.warning.main, 0.1),
-          border: alpha(theme.palette.warning.main, 0.3),
-        };
-      case 'process':
-        return {
-          main: theme.palette.info.main,
-          light: alpha(theme.palette.info.main, 0.1),
-          border: alpha(theme.palette.info.main, 0.3),
-        };
-    }
-  };
+  const generateNoteId = () => `note_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-  const handleSectionUpdate = (sectionId: string, content: string) => {
-    setSections(prev => prev.map(section => 
-      section.id === sectionId ? { ...section, content } : section
+  const handleAddNote = (sectionId: string) => {
+    const newNote: StickyNoteData = {
+      id: generateNoteId(),
+      content: '',
+      color: 'yellow',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+
+    setSections(prev => prev.map(section =>
+      section.id === sectionId
+        ? { ...section, notes: [...section.notes, newNote] }
+        : section
     ));
+
     setAutoSaveStatus('saving');
-    // Simulate auto-save
     setTimeout(() => setAutoSaveStatus('saved'), 1000);
   };
 
-  const handleSectionEdit = (sectionId: string) => {
-    setEditingSection(sectionId);
+  const handleUpdateNote = (sectionId: string, noteId: string, content: string) => {
+    setSections(prev => prev.map(section =>
+      section.id === sectionId
+        ? {
+            ...section,
+            notes: section.notes.map(note =>
+              note.id === noteId
+                ? { ...note, content, updatedAt: new Date() }
+                : note
+            )
+          }
+        : section
+    ));
+
+    setAutoSaveStatus('saving');
+    setTimeout(() => setAutoSaveStatus('saved'), 1000);
   };
 
-  const handleSectionSave = (sectionId: string, content: string) => {
-    handleSectionUpdate(sectionId, content);
-    setEditingSection(null);
+  const handleDeleteNote = (sectionId: string, noteId: string) => {
+    setSections(prev => prev.map(section =>
+      section.id === sectionId
+        ? { ...section, notes: section.notes.filter(note => note.id !== noteId) }
+        : section
+    ));
+
+    setAutoSaveStatus('saving');
+    setTimeout(() => setAutoSaveStatus('saved'), 1000);
   };
 
   const AutoSaveIndicator = () => {
