@@ -41,10 +41,10 @@ export default function TopNavigation({
   selectedCompany,
   companies,
   onCompanyChange,
+  onCreateCompany,
 }: TopNavigationProps) {
   const theme = useTheme();
   const [userMenuAnchor, setUserMenuAnchor] = React.useState<null | HTMLElement>(null);
-  const [companyMenuAnchor, setCompanyMenuAnchor] = React.useState<null | HTMLElement>(null);
 
   const handleUserMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setUserMenuAnchor(event.currentTarget);
