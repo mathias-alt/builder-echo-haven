@@ -51,8 +51,8 @@ export default function CanvasPage() {
   const theme = useTheme();
   const [canvasName, setCanvasName] = React.useState('Flourishing Business Canvas');
   const [autoSaveStatus, setAutoSaveStatus] = React.useState<'saved' | 'saving' | 'error'>('saved');
-  const [sections, setSections] = React.useState<CanvasSection[]>(canvasSections);
-  const [editingSection, setEditingSection] = React.useState<string | null>(null);
+  const [sections, setSections] = React.useState<CanvasSectionData[]>(initialSections);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
     document.title = 'Canvas - Flourishing Business Canvas';
