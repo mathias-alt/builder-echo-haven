@@ -13,6 +13,8 @@ import TeamManagementPage from "./team/TeamManagementPage";
 import InvitationLandingPage from "./invite/InvitationLandingPage";
 import JoinCompanyPage from "./invite/JoinCompanyPage";
 import InvitePage from "./invite/InvitePage";
+import CreateCompanyPage from "./company/CreateCompanyPage";
+import CompanySettingsPage from "./company/CompanySettingsPage";
 
 function NotFound() {
   return (
