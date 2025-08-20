@@ -37,6 +37,7 @@ const DRAWER_WIDTH = 280;
 
 export default function Sidebar({ open }: SidebarProps) {
   const theme = useTheme();
+  const navigate = useNavigate();
   const [canvasesOpen, setCanvasesOpen] = React.useState(true);
 
   const handleCanvasesToggle = () => {
