@@ -54,25 +54,25 @@ interface CanvasSectionProps {
 
 const sectionIcons: Record<string, React.ReactElement> = {
   // Environment icons (green)
-  sustainability: <Eco />,
+  sustainability: <Lightbulb />,
   resources: <Nature />,
   circular: <Recycling />,
-  climate: <ThermostatAuto />,
+  climate: <Thermostat />,
   biodiversity: <Pets />,
-  
+
   // Society icons (yellow)
   stakeholders: <Groups />,
   community: <LocationCity />,
   governance: <AccountBalance />,
-  wellbeing: <HealthAndSafety />,
+  wellbeing: <LocalHospital />,
   equity: <Balance />,
-  
+
   // Process icons (teal)
   value: <TrendingUp />,
-  customers: <PersonPin />,
+  customers: <Person />,
   channels: <Share />,
   revenue: <AttachMoney />,
-  costs: <CurrencyExchange />,
+  costs: <MonetizationOn />,
 };
 
 const sectionDescriptions: Record<string, string> = {
