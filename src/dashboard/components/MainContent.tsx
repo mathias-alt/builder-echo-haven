@@ -32,6 +32,7 @@ import {
   PersonAdd,
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import CompanyWidget from './CompanyWidget';
 
 interface MainContentProps {
   selectedCompany: string;
