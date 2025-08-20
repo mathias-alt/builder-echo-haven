@@ -516,6 +516,10 @@ function Footer() {
 }
 
 export default function LandingPage() {
+  React.useEffect(() => {
+    document.title = 'Home - Flourishing Business Canvas';
+  }, []);
+
   return (
     <AppTheme>
       <Box sx={{ backgroundColor: 'background.default', minHeight: '100vh' }}>
