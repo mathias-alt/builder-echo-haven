@@ -114,9 +114,8 @@ export default function MainContent({ selectedCompany }: MainContentProps) {
   };
 
   return (
-    <Box sx={{ 
-      width: '100%', 
-      maxWidth: 1400, 
+    <Box sx={{
+      width: '100%',
       mx: 'auto',
       display: 'flex',
       flexDirection: 'column',
