@@ -39,6 +39,7 @@ interface MainContentProps {
 
 export default function MainContent({ selectedCompany }: MainContentProps) {
   const theme = useTheme();
+  const navigate = useNavigate();
 
   const recentActivity = [
     {
