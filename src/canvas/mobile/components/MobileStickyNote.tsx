@@ -183,21 +183,21 @@ export const MobileStickyNote: React.FC<MobileStickyNoteProps> = ({
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
-        {isEditing ? (
+      <CardContent sx={{ p: 2, '&:last-child': { pb: 2 }, ...keyboard.getKeyboardAdjustedStyle() }}>
+        {keyboard.isEditing ? (
           <Box>
             <TextField
-              ref={textFieldRef}
+              {...keyboard.getInputProps()}
               fullWidth
               multiline
-              value={editContent}
-              onChange={(e) => setEditContent(e.target.value)}
+              value={keyboard.content}
+              onChange={(e) => keyboard.setContent(e.target.value)}
               placeholder="Enter your note here..."
               variant="standard"
               InputProps={{
                 disableUnderline: true,
                 style: {
-                  fontSize: '0.9rem',
+                  fontSize: '16px', // Prevent zoom on iOS
                   lineHeight: 1.4,
                   fontFamily: theme.typography.body2.fontFamily
                 }
@@ -207,12 +207,7 @@ export const MobileStickyNote: React.FC<MobileStickyNoteProps> = ({
                   bgcolor: 'transparent'
                 }
               }}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                  e.preventDefault();
-                  handleSave();
-                }
-              }}
+              onKeyPress={(e) => keyboard.handleKeyPress(e, handleSave)}
             />
             
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1, mt: 1 }}>
