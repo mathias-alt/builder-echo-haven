@@ -93,7 +93,7 @@ export default function BusinessCanvasDashboard() {
 
   return (
     <>
-      <CssBaseline enableColorScheme />
+      <CssBaseline />
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
