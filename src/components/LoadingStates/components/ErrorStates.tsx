@@ -138,7 +138,7 @@ const ErrorDetails: React.FC<{
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy error details:', err);
+      // Handle copy failure silently
     }
   };
 
