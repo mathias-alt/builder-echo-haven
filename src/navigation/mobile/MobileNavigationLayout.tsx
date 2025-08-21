@@ -133,7 +133,6 @@ export const MobileNavigationLayout: React.FC<MobileNavigationLayoutProps> = ({
         variant="banner"
         onRetryAll={async () => {
           // Retry all pending offline actions
-          console.log('Retrying offline actions...');
         }}
       />
 
