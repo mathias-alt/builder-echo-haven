@@ -186,7 +186,7 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({
           files: [file]
         });
       } catch (error) {
-        console.error('Failed to share QR code:', error);
+        // Handle QR code share error
       }
     }
   };
