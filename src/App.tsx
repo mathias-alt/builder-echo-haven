@@ -43,22 +43,24 @@ export default function App() {
   return (
     <BrowserRouter>
       <CssBaseline enableColorScheme />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/dashboard" element={<BusinessCanvasDashboard />} />
-        <Route path="/canvas" element={<CanvasPage />} />
-        <Route path="/analytics" element={<AnalyticsPage />} />
-        <Route path="/team" element={<TeamManagementPage />} />
-        <Route path="/invite" element={<InvitePage />} />
-        <Route path="/invite/:token" element={<InvitationLandingPage />} />
-        <Route path="/invite/join" element={<JoinCompanyPage />} />
-        <Route path="/company/create" element={<CreateCompanyPage />} />
-        <Route path="/company/settings" element={<CompanySettingsPage />} />
-        <Route path="/crm/*" element={<CrmDashboard />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <MobileAppWrapper>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/dashboard" element={<BusinessCanvasDashboard />} />
+          <Route path="/canvas" element={<CanvasPage />} />
+          <Route path="/analytics" element={<AnalyticsPage />} />
+          <Route path="/team" element={<TeamManagementPage />} />
+          <Route path="/invite" element={<InvitePage />} />
+          <Route path="/invite/:token" element={<InvitationLandingPage />} />
+          <Route path="/invite/join" element={<JoinCompanyPage />} />
+          <Route path="/company/create" element={<CreateCompanyPage />} />
+          <Route path="/company/settings" element={<CompanySettingsPage />} />
+          <Route path="/crm/*" element={<CrmDashboard />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </MobileAppWrapper>
     </BrowserRouter>
   );
 }
