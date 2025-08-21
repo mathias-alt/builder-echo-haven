@@ -24,7 +24,6 @@ import {
   Email,
   Lock,
   Person,
-  Business,
   ArrowBack,
   CheckCircle,
 } from '@mui/icons-material';
