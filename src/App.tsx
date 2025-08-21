@@ -15,6 +15,7 @@ import JoinCompanyPage from "./invite/JoinCompanyPage";
 import InvitePage from "./invite/InvitePage";
 import CreateCompanyPage from "./company/CreateCompanyPage";
 import CompanySettingsPage from "./company/CompanySettingsPage";
+import AnalyticsPage from "./analytics/AnalyticsPage";
 
 function NotFound() {
   return (
