@@ -174,7 +174,6 @@ export const menuSections: MenuSection[] = [
         icon: LogoutIcon,
         action: () => {
           // Handle logout
-          console.log('Sign out');
         },
       },
     ],
