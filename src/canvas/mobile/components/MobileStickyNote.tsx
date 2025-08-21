@@ -83,7 +83,7 @@ export const MobileStickyNote: React.FC<MobileStickyNoteProps> = ({
   };
 
   const handleEdit = () => {
-    setIsEditing(true);
+    keyboard.startEditing(note.content);
     handleMenuClose();
   };
 
