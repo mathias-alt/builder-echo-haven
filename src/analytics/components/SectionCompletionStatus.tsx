@@ -233,65 +233,7 @@ export const SectionCompletionStatus: React.FC<SectionCompletionStatusProps> = (
                                 />
                               </Box>
                             }
-                            secondary={
-                              <Box>
-                                {/* Progress Bar */}
-                                <LinearProgress
-                                  variant="determinate"
-                                  value={section.completionPercentage}
-                                  sx={{
-                                    mb: 1,
-                                    height: 4,
-                                    borderRadius: 2,
-                                    backgroundColor: alpha(theme.palette.primary.main, 0.1),
-                                    '& .MuiLinearProgress-bar': {
-                                      borderRadius: 2
-                                    }
-                                  }}
-                                />
-                                
-                                {/* Section Metrics */}
-                                <Box sx={{ 
-                                  display: 'flex', 
-                                  alignItems: 'center', 
-                                  gap: 2,
-                                  flexWrap: 'wrap'
-                                }}>
-                                  <Tooltip title="Notes in section">
-                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                                      <StickyNote2 sx={{ fontSize: 16, color: 'text.secondary' }} />
-                                      <Typography variant="caption" color="text.secondary">
-                                        {section.notesCount}
-                                      </Typography>
-                                    </Box>
-                                  </Tooltip>
-                                  
-                                  <Tooltip title="Average time spent">
-                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                                      <AccessTime sx={{ fontSize: 16, color: 'text.secondary' }} />
-                                      <Typography variant="caption" color="text.secondary">
-                                        {formatTimeSpent(section.averageTimeSpent)}
-                                      </Typography>
-                                    </Box>
-                                  </Tooltip>
-                                  
-                                  {section.contributors.length > 0 && (
-                                    <Tooltip title="Contributors">
-                                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                                        <Group sx={{ fontSize: 16, color: 'text.secondary' }} />
-                                        <Typography variant="caption" color="text.secondary">
-                                          {section.contributors.length}
-                                        </Typography>
-                                      </Box>
-                                    </Tooltip>
-                                  )}
-                                  
-                                  <Typography variant="caption" color="text.secondary">
-                                    Updated {section.lastUpdated.toLocaleDateString()}
-                                  </Typography>
-                                </Box>
-                              </Box>
-                            }
+                            secondary={null}
                           />
                           
                           <Box sx={{ textAlign: 'right', minWidth: 60 }}>
