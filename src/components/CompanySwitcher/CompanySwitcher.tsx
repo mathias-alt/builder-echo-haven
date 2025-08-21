@@ -220,7 +220,7 @@ export default function CompanySwitcher({
             </Box>
           }
           secondary={
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
+            <Box component="div" sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 0.5 }}>
               <Chip
                 label={company.role}
                 icon={getRoleIcon(company.role)}
@@ -245,11 +245,14 @@ export default function CompanySwitcher({
                   color: getPlanColor(company.plan),
                 }}
               />
-              <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+              <Typography component="span" variant="caption" sx={{ color: 'text.secondary' }}>
                 {company.memberCount} members
               </Typography>
             </Box>
           }
+          secondaryTypographyProps={{
+            component: 'div'
+          }}
         />
 
         {state.switching && state.switchingToId === company.id && (
