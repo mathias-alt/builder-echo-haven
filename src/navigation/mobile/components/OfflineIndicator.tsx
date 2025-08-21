@@ -57,7 +57,7 @@ export const OfflineIndicator: React.FC<OfflineIndicatorProps> = ({
     try {
       await onRetryAll();
     } catch (error) {
-      console.error('Failed to retry actions:', error);
+      // Handle retry actions error
     } finally {
       setIsRetrying(false);
     }
