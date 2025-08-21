@@ -43,7 +43,8 @@ function NotFound() {
 
 export default function App() {
   return (
-    <MicroInteractionsProvider>
+    <AppTheme>
+      <MicroInteractionsProvider>
       <BrowserRouter>
         <CssBaseline enableColorScheme />
         <MobileAppWrapper>
@@ -65,6 +66,7 @@ export default function App() {
           </Routes>
         </MobileAppWrapper>
       </BrowserRouter>
-    </MicroInteractionsProvider>
+      </MicroInteractionsProvider>
+    </AppTheme>
   );
 }
