@@ -183,7 +183,7 @@ export default function MainContent() {
   };
 
   const handleClick = () => {
-    console.info("You clicked the filter chip.");
+    // Handle filter chip click
   };
 
   return (
