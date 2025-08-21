@@ -491,7 +491,7 @@ function Footer() {
                 color: theme.palette.text.primary,
               }}
             >
-              Flourishing Business Canvas
+              Business Canvas
             </Typography>
           </Box>
           <Typography
