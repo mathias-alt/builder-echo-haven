@@ -23,7 +23,7 @@ import {
   Close,
   PictureAsPdf,
   Image,
-  VectorArrange,
+  Timeline,
   Code,
   Description,
   Download,
