@@ -165,6 +165,21 @@ export default function CanvasPage() {
     );
   };
 
+  // Render mobile version on mobile devices
+  if (isMobile) {
+    return (
+      <MobileCanvas
+        sections={sections}
+        onAddNote={handleAddNote}
+        onUpdateNote={handleUpdateNote}
+        onDeleteNote={handleDeleteNote}
+        canvasName={canvasName}
+        onCanvasNameChange={setCanvasName}
+        autoSaveStatus={autoSaveStatus}
+      />
+    );
+  }
+
   return (
     <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
       {/* Top Toolbar */}
