@@ -33,6 +33,24 @@ export default function AppTheme(props: AppThemeProps) {
           typography,
           shadows,
           shape,
+          // Ensure Material-UI components use theme colors
+          palette: {
+            mode: 'light',
+            primary: {
+              main: '#2cc7d0', // Teal/cyan color
+              light: '#65d6db',
+              dark: '#1f969e',
+              contrastText: '#ffffff',
+            },
+            background: {
+              default: '#fafafa',
+              paper: '#ffffff',
+            },
+            text: {
+              primary: '#212121',
+              secondary: '#757575',
+            },
+          },
           components: {
             ...inputsCustomizations,
             ...dataDisplayCustomizations,
