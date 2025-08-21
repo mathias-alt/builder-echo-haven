@@ -177,7 +177,7 @@ export const ActivityFeed: React.FC<ActivityFeedProps> = ({
       setHasMore(pageNum < 5); // Simulate finite data
       setPage(pageNum);
     } catch (error) {
-      console.error('Failed to load activities:', error);
+      // Handle activities load error
     } finally {
       setLoading(false);
     }
