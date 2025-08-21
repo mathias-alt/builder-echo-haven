@@ -125,7 +125,7 @@ export default function InvitationLandingPage() {
         const data = await fetchInvitationData(token);
         setInvitation(data);
       } catch (error) {
-        console.error('Failed to load invitation:', error);
+        // Handle invitation load error
       } finally {
         setLoading(false);
       }
