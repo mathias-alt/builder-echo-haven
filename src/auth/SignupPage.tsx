@@ -251,7 +251,7 @@ export default function SignupPage() {
   const navigate = useNavigate();
 
   React.useEffect(() => {
-    document.title = 'Sign Up - Flourishing Business Canvas';
+    document.title = 'Sign Up - Business Canvas';
   }, []);
   
   const [formData, setFormData] = React.useState({
