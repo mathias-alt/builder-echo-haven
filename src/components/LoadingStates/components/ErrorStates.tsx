@@ -345,7 +345,7 @@ export const NetworkError: React.FC<{ onRetry?: () => void }> = ({ onRetry }) =>
     }}
     primaryAction={{
       label: "Go Offline",
-      onClick: () => console.log('Switch to offline mode'),
+      onClick: () => {/* Handle offline mode */},
       variant: "outlined",
     }}
   />
