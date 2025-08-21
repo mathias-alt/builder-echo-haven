@@ -244,7 +244,6 @@ export default function AnalyticsPage() {
       const mockData = generateMockData();
       setData(mockData);
     } catch (error) {
-      console.error('Failed to fetch analytics data:', error);
       setError('Failed to load analytics data. Please try again.');
     } finally {
       setLoading(false);
