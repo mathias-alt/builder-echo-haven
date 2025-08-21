@@ -482,18 +482,12 @@ function Footer() {
             gap: 2,
           }}
         >
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Business sx={{ color: theme.palette.primary.main, fontSize: 24 }} />
-            <Typography
-              variant="body1"
-              sx={{
-                fontWeight: 600,
-                color: theme.palette.text.primary,
-              }}
-            >
-              Business Canvas
-            </Typography>
-          </Box>
+          <Logo
+            size="small"
+            color={theme.palette.primary.main}
+            text="Business Canvas"
+            textVariant="body1"
+          />
           <Typography
             variant="body2"
             sx={{
