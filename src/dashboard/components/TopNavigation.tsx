@@ -82,18 +82,11 @@ export default function TopNavigation({
             <MenuIcon />
           </IconButton>
           
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <Business sx={{ color: theme.palette.primary.main, fontSize: 28 }} />
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 600,
-                color: theme.palette.text.primary,
-              }}
-            >
-              Flourishing Business Canvas
-            </Typography>
-          </Box>
+          <Logo
+            size="medium"
+            color={theme.palette.primary.main}
+            text="Business Canvas"
+          />
           
           {/* Company Switcher */}
           <Box sx={{ ml: 2 }}>
