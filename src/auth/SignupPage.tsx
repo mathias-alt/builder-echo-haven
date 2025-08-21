@@ -331,11 +331,11 @@ export default function SignupPage() {
     // Simulate API call
     try {
       await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Signup attempt:', formData);
       // Navigate to dashboard on success
       navigate('/dashboard');
     } catch (error) {
-      console.error('Signup failed:', error);
+      // Handle signup error
+      setErrors({ email: 'Signup failed. Please try again.' });
     } finally {
       setLoading(false);
     }
