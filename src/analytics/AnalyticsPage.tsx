@@ -31,6 +31,7 @@ import { ExportUsageStats } from './components/ExportUsageStats';
 import { TeamEngagementMetrics } from './components/TeamEngagementMetrics';
 import { FilterPanel } from './components/FilterPanel';
 import { ExportAnalyticsData } from './components/ExportAnalyticsData';
+import { ActivityFeed } from '../activity';
 
 export default function AnalyticsPage() {
   const theme = useTheme();
