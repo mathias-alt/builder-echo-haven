@@ -16,6 +16,7 @@ import InvitePage from "./invite/InvitePage";
 import CreateCompanyPage from "./company/CreateCompanyPage";
 import CompanySettingsPage from "./company/CompanySettingsPage";
 import AnalyticsPage from "./analytics/AnalyticsPage";
+import MobileAppWrapper from "./navigation/mobile/MobileAppWrapper";
 
 function NotFound() {
   return (
