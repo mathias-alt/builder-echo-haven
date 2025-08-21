@@ -61,23 +61,17 @@ export const MobileStickyNote: React.FC<MobileStickyNoteProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   const touchStartRef = useRef<{ x: number; y: number; time: number } | null>(null);
 
-  useEffect(() => {
-    if (isEditing && textFieldRef.current) {
-      textFieldRef.current.focus();
-      textFieldRef.current.setSelectionRange(textFieldRef.current.value.length, textFieldRef.current.value.length);
-    }
-  }, [isEditing]);
-
   const handleSave = () => {
-    if (editContent.trim() !== note.content) {
-      onUpdate(editContent.trim());
+    if (keyboard.content.trim() !== note.content) {
+      onUpdate(keyboard.content.trim());
+      HapticFeedback.success();
     }
-    setIsEditing(false);
+    keyboard.stopEditing();
   };
 
   const handleCancel = () => {
-    setEditContent(note.content);
-    setIsEditing(false);
+    keyboard.setContent(note.content);
+    keyboard.stopEditing();
   };
 
   const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
