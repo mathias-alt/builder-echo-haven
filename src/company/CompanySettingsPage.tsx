@@ -171,7 +171,7 @@ export default function CompanySettingsPage() {
       setHasChanges(false);
       setSuccessMessage('Company settings saved successfully!');
     } catch (error) {
-      console.error('Failed to save company:', error);
+      // Handle company save error
     } finally {
       setSaving(false);
     }
