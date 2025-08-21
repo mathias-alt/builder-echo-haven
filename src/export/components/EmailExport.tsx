@@ -109,7 +109,7 @@ Best regards`,
         onSent();
       }, 2000);
     } catch (error) {
-      console.error('Failed to send email:', error);
+      // Handle email send error
     } finally {
       setSending(false);
     }
