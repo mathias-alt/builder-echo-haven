@@ -175,7 +175,7 @@ function HeroSection() {
                 lineHeight: 1.1,
               }}
             >
-              Transform Your Business Strategy
+              Build Your Business Canvas
             </Typography>
           </Fade>
           
