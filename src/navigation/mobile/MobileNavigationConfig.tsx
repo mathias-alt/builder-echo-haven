@@ -145,7 +145,6 @@ export const menuSections: MenuSection[] = [
         icon: ThemeIcon,
         action: () => {
           // Handle theme toggle
-          console.log('Toggle theme');
         },
       },
       {
