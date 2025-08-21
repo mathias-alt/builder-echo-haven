@@ -508,14 +508,12 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <AppTheme>
-      <Box sx={{ backgroundColor: 'background.default', minHeight: '100vh' }}>
-        <Navigation />
-        <HeroSection />
-        <FeaturesSection />
-        <CTASection />
-        <Footer />
-      </Box>
-    </AppTheme>
+    <Box sx={{ backgroundColor: 'background.default', minHeight: '100vh' }}>
+      <Navigation />
+      <HeroSection />
+      <FeaturesSection />
+      <CTASection />
+      <Footer />
+    </Box>
   );
 }
