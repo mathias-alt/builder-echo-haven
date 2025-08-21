@@ -124,7 +124,7 @@ export default function InvitationForm({
     try {
       await onSend(formData);
     } catch (error) {
-      console.error('Failed to send invitation:', error);
+      // Handle invitation send error
     } finally {
       setLoading(false);
     }
