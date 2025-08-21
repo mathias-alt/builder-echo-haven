@@ -141,7 +141,7 @@ export default CanvasEmbed;`;
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2000);
     } catch (error) {
-      console.error('Failed to copy to clipboard:', error);
+      // Handle clipboard copy error
     }
   };
 
