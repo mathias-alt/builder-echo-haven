@@ -148,7 +148,7 @@ export default function JoinCompanyPage() {
         }
       });
     } catch (error) {
-      console.error('Failed to create account:', error);
+      // Handle account creation error
     } finally {
       setLoading(false);
     }
