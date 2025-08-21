@@ -43,38 +43,40 @@ export const LoadingStateProvider: React.FC<{
     });
   }, []);
 
-  const executeWithLoading = useCallback(async <T>(
+  const executeWithLoading = useCallback(<T>(
     key: string,
     asyncFn: () => Promise<T>,
     config?: LoadingConfig
   ): Promise<T> => {
-    const optimizedConfig = getOptimizedConfig(config);
-    
-    try {
-      // Show loading with delay
-      if (optimizedConfig.showDelay) {
-        showLoadingDelay(key, optimizedConfig.showDelay);
-      } else {
-        setLoadingStates(prev => ({ ...prev, [key]: true }));
-      }
-
-      const startTime = Date.now();
-      const result = await asyncFn();
-
-      // Ensure minimum duration
-      if (optimizedConfig.minDuration) {
-        const elapsed = Date.now() - startTime;
-        if (elapsed < optimizedConfig.minDuration) {
-          await new Promise(resolve => 
-            setTimeout(resolve, optimizedConfig.minDuration! - elapsed)
-          );
+    return (async () => {
+      const optimizedConfig = getOptimizedConfig(config);
+      
+      try {
+        // Show loading with delay
+        if (optimizedConfig.showDelay) {
+          showLoadingDelay(key, optimizedConfig.showDelay);
+        } else {
+          setLoadingStates(prev => ({ ...prev, [key]: true }));
         }
-      }
 
-      return result;
-    } finally {
-      hideLoading(key);
-    }
+        const startTime = Date.now();
+        const result = await asyncFn();
+
+        // Ensure minimum duration
+        if (optimizedConfig.minDuration) {
+          const elapsed = Date.now() - startTime;
+          if (elapsed < optimizedConfig.minDuration) {
+            await new Promise(resolve => 
+              setTimeout(resolve, optimizedConfig.minDuration! - elapsed)
+            );
+          }
+        }
+
+        return result;
+      } finally {
+        hideLoading(key);
+      }
+    })();
   }, [getOptimizedConfig, showLoadingDelay, hideLoading]);
 
   // Cleanup timeouts on unmount
@@ -124,7 +126,7 @@ export const useScopedLoading = (scope: string) => {
 
   const isLoading = loadingStates[scope] || false;
 
-  const execute = useCallback(async <T>(
+  const execute = useCallback(<T>(
     asyncFn: () => Promise<T>,
     config?: LoadingConfig
   ): Promise<T> => {
@@ -234,21 +236,23 @@ export const useFormLoading = () => {
     });
   }, []);
 
-  const executeFieldOperation = useCallback(async <T>(
+  const executeFieldOperation = useCallback(<T>(
     field: string,
     operation: () => Promise<T>
   ): Promise<T> => {
-    setFieldLoading(field, true);
-    clearFieldError(field);
+    return (async () => {
+      setFieldLoading(field, true);
+      clearFieldError(field);
 
-    try {
-      const result = await operation();
-      setFieldLoading(field, false);
-      return result;
-    } catch (error) {
-      setFieldError(field, error instanceof Error ? error.message : String(error));
-      throw error;
-    }
+      try {
+        const result = await operation();
+        setFieldLoading(field, false);
+        return result;
+      } catch (error) {
+        setFieldError(field, error instanceof Error ? error.message : String(error));
+        throw error;
+      }
+    })();
   }, [setFieldLoading, clearFieldError, setFieldError]);
 
   const isAnyFieldLoading = Object.values(loadingFields).some(Boolean);
