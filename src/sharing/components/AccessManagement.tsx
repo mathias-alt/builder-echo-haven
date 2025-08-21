@@ -147,7 +147,7 @@ export const AccessManagement: React.FC<AccessManagementProps> = ({
       setInviteEmail('');
       setInviteDialogOpen(false);
     } catch (error) {
-      console.error('Failed to send invitation:', error);
+      // Handle invitation send error
     } finally {
       setLoading(false);
     }
