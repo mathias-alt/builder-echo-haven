@@ -54,13 +54,11 @@ export const MobileStickyNote: React.FC<MobileStickyNoteProps> = ({
   onAction
 }) => {
   const theme = useTheme();
-  const [isEditing, setIsEditing] = useState(false);
-  const [editContent, setEditContent] = useState(note.content);
+  const keyboard = useMobileNoteEditor();
   const [menuAnchor, setMenuAnchor] = useState<null | HTMLElement>(null);
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [longPressTimer, setLongPressTimer] = useState<NodeJS.Timeout | null>(null);
   const [isDragging, setIsDragging] = useState(false);
-  const textFieldRef = useRef<HTMLInputElement>(null);
   const touchStartRef = useRef<{ x: number; y: number; time: number } | null>(null);
 
   useEffect(() => {
