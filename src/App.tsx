@@ -46,7 +46,7 @@ export default function App() {
     <AppTheme>
       <MicroInteractionsProvider>
       <BrowserRouter>
-        <CssBaseline enableColorScheme />
+        <CssBaseline />
         <MobileAppWrapper>
           <Routes>
             <Route path="/" element={<LandingPage />} />
