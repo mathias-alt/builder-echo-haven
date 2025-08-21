@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useCallback, useRef } from 'react';
-import { LoadingStateContextValue, LoadingConfig, LoadingState } from './types';
+import { LoadingStateContextValue, LoadingConfig } from './types';
 import { LoadingOverlay } from './components/LoadingSpinners';
 import { useNetworkAwareLoading } from './hooks/useLoadingState';
 
@@ -43,40 +43,38 @@ export const LoadingStateProvider: React.FC<{
     });
   }, []);
 
-  const executeWithLoading = useCallback(<T>(
+  const executeWithLoading = useCallback(async (
     key: string,
-    asyncFn: () => Promise<T>,
+    asyncFn: () => Promise<any>,
     config?: LoadingConfig
-  ): Promise<T> => {
-    return (async () => {
-      const optimizedConfig = getOptimizedConfig(config);
-      
-      try {
-        // Show loading with delay
-        if (optimizedConfig.showDelay) {
-          showLoadingDelay(key, optimizedConfig.showDelay);
-        } else {
-          setLoadingStates(prev => ({ ...prev, [key]: true }));
-        }
-
-        const startTime = Date.now();
-        const result = await asyncFn();
-
-        // Ensure minimum duration
-        if (optimizedConfig.minDuration) {
-          const elapsed = Date.now() - startTime;
-          if (elapsed < optimizedConfig.minDuration) {
-            await new Promise(resolve => 
-              setTimeout(resolve, optimizedConfig.minDuration! - elapsed)
-            );
-          }
-        }
-
-        return result;
-      } finally {
-        hideLoading(key);
+  ): Promise<any> => {
+    const optimizedConfig = getOptimizedConfig(config);
+    
+    try {
+      // Show loading with delay
+      if (optimizedConfig.showDelay) {
+        showLoadingDelay(key, optimizedConfig.showDelay);
+      } else {
+        setLoadingStates(prev => ({ ...prev, [key]: true }));
       }
-    })();
+
+      const startTime = Date.now();
+      const result = await asyncFn();
+
+      // Ensure minimum duration
+      if (optimizedConfig.minDuration) {
+        const elapsed = Date.now() - startTime;
+        if (elapsed < optimizedConfig.minDuration) {
+          await new Promise(resolve => 
+            setTimeout(resolve, optimizedConfig.minDuration! - elapsed)
+          );
+        }
+      }
+
+      return result;
+    } finally {
+      hideLoading(key);
+    }
   }, [getOptimizedConfig, showLoadingDelay, hideLoading]);
 
   // Cleanup timeouts on unmount
@@ -126,10 +124,10 @@ export const useScopedLoading = (scope: string) => {
 
   const isLoading = loadingStates[scope] || false;
 
-  const execute = useCallback(<T>(
-    asyncFn: () => Promise<T>,
+  const execute = useCallback(async (
+    asyncFn: () => Promise<any>,
     config?: LoadingConfig
-  ): Promise<T> => {
+  ): Promise<any> => {
     return executeWithLoading(scope, asyncFn, config);
   }, [scope, executeWithLoading]);
 
@@ -149,11 +147,11 @@ export const useScopedLoading = (scope: string) => {
 };
 
 // Higher-order component for loading states
-export const withLoadingState = <P extends object>(
-  WrappedComponent: React.ComponentType<P>,
+export const withLoadingState = (
+  WrappedComponent: React.ComponentType<any>,
   loadingKey: string
 ) => {
-  const WithLoadingStateComponent: React.FC<P> = (props) => {
+  const WithLoadingStateComponent: React.FC<any> = (props) => {
     const { isLoading } = useScopedLoading(loadingKey);
 
     if (isLoading) {
@@ -236,23 +234,21 @@ export const useFormLoading = () => {
     });
   }, []);
 
-  const executeFieldOperation = useCallback(<T>(
+  const executeFieldOperation = useCallback(async (
     field: string,
-    operation: () => Promise<T>
-  ): Promise<T> => {
-    return (async () => {
-      setFieldLoading(field, true);
-      clearFieldError(field);
+    operation: () => Promise<any>
+  ): Promise<any> => {
+    setFieldLoading(field, true);
+    clearFieldError(field);
 
-      try {
-        const result = await operation();
-        setFieldLoading(field, false);
-        return result;
-      } catch (error) {
-        setFieldError(field, error instanceof Error ? error.message : String(error));
-        throw error;
-      }
-    })();
+    try {
+      const result = await operation();
+      setFieldLoading(field, false);
+      return result;
+    } catch (error) {
+      setFieldError(field, error instanceof Error ? error.message : String(error));
+      throw error;
+    }
   }, [setFieldLoading, clearFieldError, setFieldError]);
 
   const isAnyFieldLoading = Object.values(loadingFields).some(Boolean);
