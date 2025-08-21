@@ -87,7 +87,6 @@ export const menuSections: MenuSection[] = [
         icon: ShareIcon,
         action: () => {
           // Handle share action
-          console.log('Share workspace');
         },
       },
     ],
