@@ -58,7 +58,6 @@ export const MobileAppWrapper: React.FC<MobileAppWrapperProps> = ({ children }) 
       await new Promise(resolve => setTimeout(resolve, 1000));
     } else if (currentPath.startsWith('/analytics')) {
       // Refresh analytics data
-      console.log('Refreshing analytics...');
       await new Promise(resolve => setTimeout(resolve, 2000));
     } else {
       // Default refresh
