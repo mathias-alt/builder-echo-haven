@@ -413,7 +413,6 @@ export default function AnalyticsPage() {
                 }
               }}
               onUserClick={(userId) => {
-                console.log('User clicked:', userId);
                 // Could navigate to user profile or filter by user
               }}
             />
