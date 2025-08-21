@@ -49,7 +49,6 @@ export const MobileAppWrapper: React.FC<MobileAppWrapperProps> = ({ children }) 
     
     if (currentPath.startsWith('/dashboard')) {
       // Refresh dashboard data
-      console.log('Refreshing dashboard...');
       await new Promise(resolve => setTimeout(resolve, 1500));
     } else if (currentPath.startsWith('/canvas')) {
       // Refresh canvas data
