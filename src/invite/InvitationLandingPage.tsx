@@ -149,7 +149,7 @@ export default function InvitationLandingPage() {
       await new Promise(resolve => setTimeout(resolve, 2000));
       navigate('/invite/join', { state: { invitation } });
     } catch (error) {
-      console.error('Failed to accept invitation:', error);
+      // Handle invitation accept error
     } finally {
       setAccepting(false);
     }
