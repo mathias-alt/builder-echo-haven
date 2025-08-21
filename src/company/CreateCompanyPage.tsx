@@ -126,7 +126,7 @@ export default function CreateCompanyPage() {
         }
       });
     } catch (error) {
-      console.error('Failed to create company:', error);
+      // Handle company creation error
     } finally {
       setLoading(false);
     }
