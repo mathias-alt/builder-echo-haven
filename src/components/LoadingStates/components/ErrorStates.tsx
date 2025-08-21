@@ -370,7 +370,7 @@ export const ServerError: React.FC<{
     }}
     supportAction={{
       label: "Contact Support",
-      onClick: onContactSupport || (() => console.log('Contact support')),
+      onClick: onContactSupport || (() => {/* Handle contact support */}),
     }}
     showErrorDetails={true}
   />
