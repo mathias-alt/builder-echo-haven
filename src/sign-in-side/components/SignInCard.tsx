@@ -185,7 +185,7 @@ export default function SignInCard() {
         <Button
           fullWidth
           variant="outlined"
-          onClick={() => alert("Sign in with Facebook")}
+          onClick={() => {/* Handle Facebook sign in */}}
           startIcon={<FacebookIcon />}
         >
           Sign in with Facebook
