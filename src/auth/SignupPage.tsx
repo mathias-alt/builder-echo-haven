@@ -29,6 +29,7 @@ import {
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import AppTheme from '../shared-theme/AppTheme';
+import Logo from '../components/Logo';
 
 interface FloatingLabelTextFieldProps {
   label: string;
