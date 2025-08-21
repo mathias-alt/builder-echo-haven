@@ -157,11 +157,34 @@ export const MobileNavigationLayout: React.FC<MobileNavigationLayoutProps> = ({
 
         {/* Page Title */}
         <Box sx={{ flex: 1, textAlign: 'center' }}>
-          {/* Page title would be determined by current route */}
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: 600,
+              color: theme.palette.text.primary,
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {(() => {
+              const currentTab = navigationTabs.find(tab =>
+                location.pathname.startsWith(tab.route)
+              );
+              return currentTab?.label || 'Flourishing Business Canvas';
+            })()}
+          </Typography>
         </Box>
 
-        {/* Additional actions could go here */}
-        <Box sx={{ width: 44 }} /> {/* Spacer for symmetry */}
+        {/* Additional actions */}
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          {navigationState.isLoading && (
+            <CircularProgress
+              size={24}
+              sx={{ color: theme.palette.primary.main }}
+            />
+          )}
+        </Box>
       </Box>
 
       {/* Main Content Area */}
