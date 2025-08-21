@@ -493,9 +493,9 @@ export default function TeamManagementPage() {
                   isSelected={selectedMembers.includes(member.id)}
                   onSelect={handleMemberSelect}
                   showCheckbox={true}
-                  onEdit={(member) => console.log('Edit:', member)}
-                  onDelete={(member) => console.log('Delete:', member)}
-                  onChangeRole={(member, role) => console.log('Change role:', member, role)}
+                  onEdit={(member) => {/* Handle edit member */}}
+                  onDelete={(member) => {/* Handle delete member */}}
+                  onChangeRole={(member, role) => {/* Handle role change */}}
                 />
               </Grid>
             ))}
