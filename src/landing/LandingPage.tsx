@@ -47,11 +47,13 @@ function ScrollTriggeredFade({ children, delay = 0 }: { children: React.ReactNod
   const ref = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
+    let timeoutId: NodeJS.Timeout | null = null;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const timeoutId = setTimeout(() => setTrigger(true), delay);
-          return () => clearTimeout(timeoutId);
+          timeoutId = setTimeout(() => setTrigger(true), delay);
+          observer.unobserve(entry.target);
         }
       },
       { threshold: 0.1 }
@@ -64,6 +66,9 @@ function ScrollTriggeredFade({ children, delay = 0 }: { children: React.ReactNod
 
     return () => {
       observer.disconnect();
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
     };
   }, [delay]);
 
