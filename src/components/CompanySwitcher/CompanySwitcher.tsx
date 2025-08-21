@@ -152,7 +152,7 @@ export default function CompanySwitcher({
       await onCompanySwitch(companyId);
       handleClose();
     } catch (error) {
-      console.error('Failed to switch company:', error);
+      // Handle company switch error silently
     } finally {
       setState(prev => ({ ...prev, switching: false, switchingToId: null }));
     }
