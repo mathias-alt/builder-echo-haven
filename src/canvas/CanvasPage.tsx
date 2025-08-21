@@ -224,10 +224,11 @@ export default function CanvasPage() {
             >
               Print
             </Button>
-            <Button 
-              startIcon={<Share />} 
-              variant="contained" 
+            <Button
+              startIcon={<Share />}
+              variant="contained"
               size="small"
+              onClick={() => setShareModalOpen(true)}
               sx={{ textTransform: 'none' }}
             >
               Share
