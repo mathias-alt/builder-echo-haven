@@ -52,6 +52,8 @@ export const Logo: React.FC<LogoProps> = ({
         viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Business Canvas Logo"
       >
         <path d="M21.4947 4.66723L29.7037 9.27318L33.866 6.94467L21.4947 0L0.830335 11.6017L4.97161 13.9302L21.4947 4.66723Z" fill="currentColor"/>
         <path d="M38.0074 9.27319L21.4948 18.5362L13.2859 13.9302L9.13407 16.2587L21.4948 23.1932L42.1697 11.6017L38.0074 9.27319Z" fill="currentColor"/>
