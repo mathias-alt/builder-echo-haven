@@ -520,9 +520,11 @@ export default function LandingPage() {
   return (
     <Box sx={{ backgroundColor: 'background.default', minHeight: '100vh' }}>
       <Navigation />
-      <HeroSection />
-      <FeaturesSection />
-      <CTASection />
+      <Box component="main" role="main">
+        <HeroSection />
+        <FeaturesSection />
+        <CTASection />
+      </Box>
       <Footer />
     </Box>
   );
