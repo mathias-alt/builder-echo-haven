@@ -93,7 +93,7 @@ export default function BusinessCanvasDashboard() {
   const currentCompany = companies.find(c => c.id === selectedCompany);
 
   return (
-    <AppTheme>
+    <>
       <CssBaseline enableColorScheme />
       <Box sx={{
         display: 'flex',
@@ -148,6 +148,6 @@ export default function BusinessCanvasDashboard() {
           </Box>
         </Box>
       </Box>
-    </AppTheme>
+    </>
   );
 }
