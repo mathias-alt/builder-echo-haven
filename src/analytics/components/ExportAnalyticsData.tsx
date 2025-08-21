@@ -84,7 +84,7 @@ export const ExportAnalyticsData: React.FC<ExportAnalyticsDataProps> = ({
       }, 1500);
       
     } catch (error) {
-      console.error('Export failed:', error);
+      // Handle export error
     } finally {
       setExporting(false);
     }
