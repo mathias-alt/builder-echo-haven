@@ -70,7 +70,7 @@ const steps = ['Format & Settings', 'Preview', 'Export'];
 const iconMap: Record<string, React.ReactElement> = {
   PictureAsPdf: <PictureAsPdf />,
   Image: <Image />,
-  VectorArrange: <VectorArrange />,
+  Timeline: <Timeline />,
   Code: <Code />,
   Description: <Description />,
 };
