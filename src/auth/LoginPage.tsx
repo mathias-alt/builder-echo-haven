@@ -247,8 +247,7 @@ export default function LoginPage() {
   };
 
   return (
-    <AppTheme>
-      <Box
+    <Box
         sx={{
           minHeight: '100vh',
           display: 'flex',
@@ -426,7 +425,6 @@ export default function LoginPage() {
             </Card>
           </Fade>
         </Container>
-      </Box>
-    </AppTheme>
+    </Box>
   );
 }
