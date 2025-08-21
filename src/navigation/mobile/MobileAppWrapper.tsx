@@ -52,7 +52,6 @@ export const MobileAppWrapper: React.FC<MobileAppWrapperProps> = ({ children }) 
       await new Promise(resolve => setTimeout(resolve, 1500));
     } else if (currentPath.startsWith('/canvas')) {
       // Refresh canvas data
-      console.log('Refreshing canvas...');
       await new Promise(resolve => setTimeout(resolve, 1200));
     } else if (currentPath.startsWith('/team')) {
       // Refresh team data
