@@ -113,7 +113,7 @@ export const MobileCanvas: React.FC<MobileCanvasProps> = ({
         break;
       
       default:
-        console.log('Action:', actionId);
+        // Handle unknown action
     }
   };
 
