@@ -99,7 +99,7 @@ export const ShareModal: React.FC<ShareModalProps> = ({
         setModalState(prev => ({ ...prev, linkGenerated: true }));
       }
     } catch (error) {
-      console.error('Failed to save share settings:', error);
+      // Handle save settings error
     }
   };
 
