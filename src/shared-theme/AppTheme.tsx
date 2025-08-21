@@ -23,23 +23,20 @@ export default function AppTheme(props: AppThemeProps) {
     return disableCustomTheme
       ? {}
       : createTheme({
-          // For more details about CSS variables configuration, see https://mui.com/material-ui/customization/css-theme-variables/configuration/
-          cssVariables: {
-            colorSchemeSelector: "data-mui-color-scheme",
-            cssVarPrefix: "template",
-          },
-          defaultColorScheme: "light", // Set light mode as default instead of using system preference
-          colorSchemes, // Recently added in v6 for building light & dark mode app, see https://mui.com/material-ui/customization/palette/#color-schemes
-          typography,
-          shadows,
-          shape,
-          // Ensure Material-UI components use theme colors
+          // Disable CSS variables to prevent theme conflicts
+          cssVariables: false,
           palette: {
             mode: 'light',
             primary: {
               main: '#2cc7d0', // Teal/cyan color
               light: '#65d6db',
               dark: '#1f969e',
+              contrastText: '#ffffff',
+            },
+            secondary: {
+              main: '#f50057',
+              light: '#ff5983',
+              dark: '#c51162',
               contrastText: '#ffffff',
             },
             background: {
@@ -50,7 +47,23 @@ export default function AppTheme(props: AppThemeProps) {
               primary: '#212121',
               secondary: '#757575',
             },
+            grey: {
+              50: '#fafafa',
+              100: '#f5f5f5',
+              200: '#eeeeee',
+              300: '#e0e0e0',
+              400: '#bdbdbd',
+              500: '#9e9e9e',
+              600: '#757575',
+              700: '#616161',
+              800: '#424242',
+              900: '#212121',
+            },
+            divider: 'rgba(0, 0, 0, 0.12)',
           },
+          typography,
+          shadows,
+          shape,
           components: {
             ...inputsCustomizations,
             ...dataDisplayCustomizations,
