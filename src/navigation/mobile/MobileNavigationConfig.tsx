@@ -153,7 +153,6 @@ export const menuSections: MenuSection[] = [
         icon: LanguageIcon,
         action: () => {
           // Handle language selection
-          console.log('Change language');
         },
       },
       {
