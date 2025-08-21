@@ -17,7 +17,7 @@ import {
   Delete,
   DriveFileMove,
   CheckCircle,
-  Canvas,
+  Dashboard,
   Share,
   PersonAdd,
   PersonRemove,
