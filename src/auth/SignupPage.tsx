@@ -394,17 +394,12 @@ export default function SignupPage() {
                     <ArrowBack />
                   </IconButton>
                   
-                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1, mb: 2 }}>
-                    <Business sx={{ color: theme.palette.primary.main, fontSize: 32 }} />
-                    <Typography
-                      variant="h6"
-                      sx={{
-                        fontWeight: 600,
-                        color: theme.palette.text.primary,
-                      }}
-                    >
-                      Flourishing Business
-                    </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
+                    <Logo
+                      size="large"
+                      color={theme.palette.primary.main}
+                      text="Business Canvas"
+                    />
                   </Box>
                   
                   <Typography
