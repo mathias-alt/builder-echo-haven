@@ -510,7 +510,7 @@ function Footer() {
 
 export default function LandingPage() {
   React.useEffect(() => {
-    document.title = 'Home - Flourishing Business Canvas';
+    document.title = 'Home - Business Canvas';
   }, []);
 
   return (
