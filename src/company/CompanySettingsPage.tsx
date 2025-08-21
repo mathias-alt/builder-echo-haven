@@ -202,7 +202,7 @@ export default function CompanySettingsPage() {
         }
       });
     } catch (error) {
-      console.error('Failed to delete company:', error);
+      // Handle company delete error
     } finally {
       setSaving(false);
       setDeleteDialogOpen(false);
