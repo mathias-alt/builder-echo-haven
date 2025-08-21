@@ -231,11 +231,11 @@ export default function LoginPage() {
     // Simulate API call
     try {
       await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Login attempt:', { email, password });
       // Navigate to dashboard on success
       navigate('/dashboard');
     } catch (error) {
-      console.error('Login failed:', error);
+      // Handle login error
+      setErrors({ email: 'Login failed. Please try again.' });
     } finally {
       setLoading(false);
     }
