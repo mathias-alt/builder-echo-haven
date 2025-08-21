@@ -122,7 +122,7 @@ export const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({
       
       img.src = qrCodeDataUrl;
     } catch (error) {
-      console.error('Failed to copy image to clipboard:', error);
+      // Handle clipboard copy error
     }
   };
 
