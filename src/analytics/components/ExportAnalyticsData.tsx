@@ -72,7 +72,7 @@ export const ExportAnalyticsData: React.FC<ExportAnalyticsDataProps> = ({
       // 2. Generate the file
       // 3. Trigger download
       
-      console.log('Exporting:', { filename, format: selectedFormat, dataType: selectedDataType, data });
+      // Export logic here
       
       // Simulate file download
       downloadFile(filename, data);
