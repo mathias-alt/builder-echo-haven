@@ -50,17 +50,21 @@ function ScrollTriggeredFade({ children, delay = 0 }: { children: React.ReactNod
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setTrigger(true), delay);
+          const timeoutId = setTimeout(() => setTrigger(true), delay);
+          return () => clearTimeout(timeoutId);
         }
       },
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, [delay]);
 
   return (
