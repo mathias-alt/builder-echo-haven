@@ -21,7 +21,6 @@ import {
   VisibilityOff,
   Email,
   Lock,
-  Business,
   ArrowBack,
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
