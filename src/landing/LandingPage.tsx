@@ -18,7 +18,6 @@ import {
   Groups,
   Analytics,
   AutoAwesome,
-  Business,
   ArrowForward,
   CheckCircle,
 } from '@mui/icons-material';
