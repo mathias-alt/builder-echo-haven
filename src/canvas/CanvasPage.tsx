@@ -294,6 +294,22 @@ export default function CanvasPage() {
           </Box>
         </Container>
       </Box>
+
+      {/* Export Modal */}
+      <ExportModal
+        open={exportModalOpen}
+        onClose={() => setExportModalOpen(false)}
+        canvasId="canvas-1"
+        onExport={handleExport}
+      />
+
+      {/* Share Modal */}
+      <ShareModal
+        open={shareModalOpen}
+        onClose={() => setShareModalOpen(false)}
+        canvasId="canvas-1"
+        canvasTitle={canvasName}
+      />
     </Box>
   );
 }
