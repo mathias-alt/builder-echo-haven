@@ -17,6 +17,7 @@ import CreateCompanyPage from "./company/CreateCompanyPage";
 import CompanySettingsPage from "./company/CompanySettingsPage";
 import AnalyticsPage from "./analytics/AnalyticsPage";
 import MobileAppWrapper from "./navigation/mobile/MobileAppWrapper";
+import { MicroInteractionsProvider } from "./components/MicroInteractions";
 
 function NotFound() {
   return (
