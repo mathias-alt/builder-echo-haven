@@ -26,7 +26,7 @@ import {
   AccessTime,
   Group,
   StickyNote2,
-  Eco,
+  Nature,
   People,
   Business
 } from '@mui/icons-material';
