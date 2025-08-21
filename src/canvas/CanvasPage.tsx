@@ -57,6 +57,7 @@ export default function CanvasPage() {
   const [sections, setSections] = React.useState<CanvasSectionData[]>(initialSections);
   const [isLoading, setIsLoading] = React.useState(false);
   const [exportModalOpen, setExportModalOpen] = React.useState(false);
+  const [shareModalOpen, setShareModalOpen] = React.useState(false);
 
   React.useEffect(() => {
     document.title = 'Canvas - Flourishing Business Canvas';
