@@ -146,7 +146,7 @@ export const formatOptions: Array<{
     value: 'svg',
     label: 'SVG',
     description: 'Scalable vector format, perfect for web',
-    icon: 'VectorArrange',
+    icon: 'Timeline',
   },
   {
     value: 'html',
