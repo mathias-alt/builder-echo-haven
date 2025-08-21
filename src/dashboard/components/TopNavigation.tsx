@@ -26,6 +26,7 @@ import {
   Help,
 } from '@mui/icons-material';
 import { CompanySwitcher, UserCompany } from '../../components/CompanySwitcher';
+import Logo from '../../components/Logo';
 
 interface TopNavigationProps {
   onSidebarToggle: () => void;
