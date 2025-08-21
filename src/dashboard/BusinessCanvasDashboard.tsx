@@ -4,7 +4,6 @@ import {
   CssBaseline,
   alpha,
 } from '@mui/material';
-import AppTheme from '../shared-theme/AppTheme';
 import TopNavigation from './components/TopNavigation';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
