@@ -89,6 +89,8 @@ function Navigation() {
     <HideOnScroll>
       <Box
         component="nav"
+        role="navigation"
+        aria-label="Main navigation"
         sx={{
           position: 'fixed',
           top: 0,
