@@ -409,7 +409,7 @@ export const PermissionError: React.FC<{
     }
     primaryAction={{
       label: "Request Access",
-      onClick: onRequestAccess || (() => console.log('Request access')),
+      onClick: onRequestAccess || (() => {/* Handle request access */}),
       variant: "contained",
     }}
     secondaryAction={{
