@@ -74,7 +74,7 @@ export const ShareLinkGenerator: React.FC<ShareLinkGeneratorProps> = ({
       setShortLink(shortLink);
       onLinkGenerated();
     } catch (error) {
-      console.error('Failed to generate share link:', error);
+      // Handle share link generation error
     } finally {
       setGenerating(false);
     }
