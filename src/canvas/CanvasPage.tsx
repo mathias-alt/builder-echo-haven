@@ -27,6 +27,7 @@ import CanvasSection, { CanvasSectionData } from './components/CanvasSection';
 import { StickyNoteData } from './components/StickyNote';
 import { ExportModal, ExportSettings } from '../export';
 import { ShareModal } from '../sharing';
+import { MobileCanvas } from './mobile/MobileCanvas';
 
 const initialSections: CanvasSectionData[] = [
   // Environment sections (green)
