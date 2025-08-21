@@ -119,7 +119,6 @@ export default function ExportModal({
       await onExport(settings);
       setExportComplete(true);
     } catch (error) {
-      console.error('Export failed:', error);
       setIsExporting(false);
     }
   };
