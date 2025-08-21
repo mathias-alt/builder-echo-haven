@@ -104,7 +104,7 @@ export const MobileNavigationLayout: React.FC<MobileNavigationLayoutProps> = ({
 
   // Handle menu item clicks
   const handleMenuItemClick = useCallback((item: any) => {
-    console.log('Menu item clicked:', item.label);
+    // Handle menu item click
   }, []);
 
   // Don't render mobile navigation on desktop
