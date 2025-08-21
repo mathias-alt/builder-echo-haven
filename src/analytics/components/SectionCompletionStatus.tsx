@@ -45,7 +45,7 @@ export const SectionCompletionStatus: React.FC<SectionCompletionStatusProps> = (
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'environment':
-        return <Eco />;
+        return <Nature />;
       case 'society':
         return <People />;
       case 'process':
