@@ -147,8 +147,9 @@ export const MobileStickyNote: React.FC<MobileStickyNoteProps> = ({
     if (!isDragging && touchStartRef.current) {
       const deltaTime = Date.now() - touchStartRef.current.time;
       // Quick tap to edit
-      if (deltaTime < 200 && !isEditing) {
-        setIsEditing(true);
+      if (deltaTime < 200 && !keyboard.isEditing) {
+        keyboard.startEditing(note.content);
+        HapticFeedback.light();
       }
     }
 
