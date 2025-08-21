@@ -18,7 +18,6 @@ import {
 } from '@mui/material';
 import {
   Menu as MenuIcon,
-  Business,
   AccountCircle,
   Settings,
   ExitToApp,
