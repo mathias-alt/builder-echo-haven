@@ -23,8 +23,6 @@ export default function AppTheme(props: AppThemeProps) {
     return disableCustomTheme
       ? {}
       : createTheme({
-          // Disable CSS variables to prevent theme conflicts
-          cssVariables: false,
           palette: {
             mode: 'light',
             primary: {
@@ -60,16 +58,97 @@ export default function AppTheme(props: AppThemeProps) {
               900: '#212121',
             },
             divider: 'rgba(0, 0, 0, 0.12)',
+            success: {
+              main: '#4caf50',
+              light: '#81c784',
+              dark: '#388e3c',
+              contrastText: '#ffffff',
+            },
+            warning: {
+              main: '#ff9800',
+              light: '#ffb74d',
+              dark: '#f57c00',
+              contrastText: '#000000',
+            },
+            error: {
+              main: '#f44336',
+              light: '#e57373',
+              dark: '#d32f2f',
+              contrastText: '#ffffff',
+            },
+            info: {
+              main: '#2196f3',
+              light: '#64b5f6',
+              dark: '#1976d2',
+              contrastText: '#ffffff',
+            },
           },
-          typography,
-          shadows,
-          shape,
+          typography: {
+            fontFamily: 'Inter, sans-serif',
+            h1: {
+              fontSize: '2.5rem',
+              fontWeight: 600,
+              lineHeight: 1.2,
+            },
+            h2: {
+              fontSize: '2rem',
+              fontWeight: 600,
+              lineHeight: 1.2,
+            },
+            h3: {
+              fontSize: '1.75rem',
+              fontWeight: 600,
+              lineHeight: 1.2,
+            },
+            h4: {
+              fontSize: '1.5rem',
+              fontWeight: 600,
+              lineHeight: 1.5,
+            },
+            h5: {
+              fontSize: '1.25rem',
+              fontWeight: 600,
+            },
+            h6: {
+              fontSize: '1.125rem',
+              fontWeight: 600,
+            },
+            body1: {
+              fontSize: '1rem',
+            },
+            body2: {
+              fontSize: '0.875rem',
+            },
+          },
+          shape: {
+            borderRadius: 8,
+          },
           components: {
-            ...inputsCustomizations,
-            ...dataDisplayCustomizations,
-            ...feedbackCustomizations,
-            ...navigationCustomizations,
-            ...surfacesCustomizations,
+            MuiCssBaseline: {
+              styleOverrides: {
+                body: {
+                  backgroundColor: '#fafafa',
+                  color: '#212121',
+                },
+              },
+            },
+            // Override any component that might use dark theme
+            MuiPaper: {
+              styleOverrides: {
+                root: {
+                  backgroundColor: '#ffffff',
+                  color: '#212121',
+                },
+              },
+            },
+            MuiAppBar: {
+              styleOverrides: {
+                root: {
+                  backgroundColor: '#ffffff',
+                  color: '#212121',
+                },
+              },
+            },
             ...themeComponents,
           },
         });
