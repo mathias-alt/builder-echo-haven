@@ -209,7 +209,7 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
             <Button
               fullWidth
               variant="outlined"
-              onClick={() => alert("Sign up with Facebook")}
+              onClick={() => {/* Handle Facebook sign up */}}
               startIcon={<FacebookIcon />}
             >
               Sign up with Facebook
