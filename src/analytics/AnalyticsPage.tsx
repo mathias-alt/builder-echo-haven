@@ -396,6 +396,44 @@ export default function AnalyticsPage() {
               filters={filters}
             />
           </Grid>
+
+          {/* Activity Feed */}
+          <Grid item xs={12} lg={8}>
+            <ActivityFeed
+              canvasId="canvas-1"
+              maxHeight={600}
+              showHeader={true}
+              showFilters={true}
+              enableGrouping={true}
+              enableRealTime={true}
+              onActivityClick={(activity) => {
+                console.log('Activity clicked:', activity);
+                // Navigate to relevant section based on activity
+                if (activity.target.sectionId) {
+                  // Could navigate to canvas with section highlighted
+                  // navigate(`/canvas?section=${activity.target.sectionId}`);
+                }
+              }}
+              onUserClick={(userId) => {
+                console.log('User clicked:', userId);
+                // Could navigate to user profile or filter by user
+              }}
+            />
+          </Grid>
+
+          {/* Activity Stats (placeholder for future enhancement) */}
+          <Grid item xs={12} lg={4}>
+            <Card sx={{ height: '100%', border: 1, borderColor: 'divider' }}>
+              <CardContent>
+                <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
+                  Activity Summary
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Real-time activity insights and team collaboration metrics are displayed in the Activity Feed.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
         </Grid>
       </Container>
 
