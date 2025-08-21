@@ -54,6 +54,7 @@ const initialSections: CanvasSectionData[] = [
 
 export default function CanvasPage() {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [canvasName, setCanvasName] = React.useState('Flourishing Business Canvas');
   const [autoSaveStatus, setAutoSaveStatus] = React.useState<'saved' | 'saving' | 'error'>('saved');
   const [sections, setSections] = React.useState<CanvasSectionData[]>(initialSections);
