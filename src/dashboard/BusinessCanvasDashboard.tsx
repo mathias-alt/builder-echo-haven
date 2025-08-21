@@ -77,9 +77,9 @@ export default function BusinessCanvasDashboard() {
       }));
 
       setSelectedCompany(companyId);
-      console.log('Switched to company:', companyId);
+      // Company switched successfully
     } catch (error) {
-      console.error('Failed to switch company:', error);
+      // Handle company switch error
     } finally {
       setSwitchingCompany(false);
     }
