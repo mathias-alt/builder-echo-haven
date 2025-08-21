@@ -406,7 +406,6 @@ export default function AnalyticsPage() {
               enableGrouping={true}
               enableRealTime={true}
               onActivityClick={(activity) => {
-                console.log('Activity clicked:', activity);
                 // Navigate to relevant section based on activity
                 if (activity.target.sectionId) {
                   // Could navigate to canvas with section highlighted
