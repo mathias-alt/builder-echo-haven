@@ -96,7 +96,7 @@ export const MobileNavigationLayout: React.FC<MobileNavigationLayoutProps> = ({
         await new Promise(resolve => setTimeout(resolve, 1500));
       }
     } catch (error) {
-      console.error('Refresh failed:', error);
+      // Handle refresh error
     } finally {
       setNavigationState(prev => ({ ...prev, isLoading: false }));
     }
