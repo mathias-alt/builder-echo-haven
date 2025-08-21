@@ -103,6 +103,13 @@ export {
   DropdownMenu,
 } from './components/MenuTransitions';
 
-// Integration utilities
-export { default as MicroInteractionsProvider } from './MicroInteractionsProvider';
+// Integration utilities and hooks
+export {
+  default as MicroInteractionsProvider,
+  useMicroInteractions,
+  useOptimizedAnimation,
+  useResponsiveAnimation,
+  withMicroInteractions,
+  MicroInteractionsSettings,
+} from './MicroInteractionsProvider';
 export { default as IntegrationExamples } from './examples/IntegrationExamples';
