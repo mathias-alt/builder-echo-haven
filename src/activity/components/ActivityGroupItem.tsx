@@ -56,7 +56,7 @@ export const ActivityGroupItem: React.FC<ActivityGroupItemProps> = ({
       case 'section_completed':
         return <CheckCircle {...iconProps} sx={{ color: 'success.main' }} />;
       case 'canvas_created':
-        return <Canvas {...iconProps} sx={{ color: 'primary.main' }} />;
+        return <Dashboard {...iconProps} sx={{ color: 'primary.main' }} />;
       case 'canvas_shared':
         return <Share {...iconProps} sx={{ color: 'info.main' }} />;
       case 'team_member_added':
