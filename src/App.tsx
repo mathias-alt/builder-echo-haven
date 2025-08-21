@@ -18,6 +18,7 @@ import CompanySettingsPage from "./company/CompanySettingsPage";
 import AnalyticsPage from "./analytics/AnalyticsPage";
 import MobileAppWrapper from "./navigation/mobile/MobileAppWrapper";
 import { MicroInteractionsProvider } from "./components/MicroInteractions";
+import AppTheme from "./shared-theme/AppTheme";
 
 function NotFound() {
   return (
