@@ -439,7 +439,7 @@ export const ClientError: React.FC<{
     }}
     supportAction={{
       label: "Report Bug",
-      onClick: onReportBug || (() => console.log('Report bug')),
+      onClick: onReportBug || (() => {/* Handle report bug */}),
     }}
     showErrorDetails={true}
   />
