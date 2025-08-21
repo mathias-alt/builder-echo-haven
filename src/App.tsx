@@ -48,6 +48,7 @@ export default function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/dashboard" element={<BusinessCanvasDashboard />} />
         <Route path="/canvas" element={<CanvasPage />} />
+        <Route path="/analytics" element={<AnalyticsPage />} />
         <Route path="/team" element={<TeamManagementPage />} />
         <Route path="/invite" element={<InvitePage />} />
         <Route path="/invite/:token" element={<InvitationLandingPage />} />
