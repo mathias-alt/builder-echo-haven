@@ -500,7 +500,7 @@ function Footer() {
               color: theme.palette.text.secondary,
             }}
           >
-            © 2024 Flourishing Business Canvas. All rights reserved.
+            © 2024 Business Canvas. All rights reserved.
           </Typography>
         </Box>
       </Container>
