@@ -118,7 +118,7 @@ export default function CanvasPage() {
 
   const handleExport = async (settings: ExportSettings) => {
     // Simulate export process
-    console.log('Exporting canvas with settings:', settings);
+    // Export logic would go here
 
     // In a real app, this would:
     // 1. Generate the export based on settings
