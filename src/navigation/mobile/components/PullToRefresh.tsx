@@ -242,7 +242,7 @@ export const usePullToRefreshTrigger = (onRefresh: () => Promise<void>) => {
     try {
       await onRefresh();
     } catch (error) {
-      console.error('Manual refresh failed:', error);
+      // Handle manual refresh error
     } finally {
       setIsRefreshing(false);
     }
