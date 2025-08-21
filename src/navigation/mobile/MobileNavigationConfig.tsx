@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Dashboard as DashboardIcon,
   DashboardOutlined as DashboardOutlinedIcon,
-  Canvas as CanvasIcon,
+  Dashboard as CanvasIcon,
   People as PeopleIcon,
   PeopleOutlined as PeopleOutlinedIcon,
   Analytics as AnalyticsIcon,
