@@ -23,6 +23,8 @@ import {
   ColorLens
 } from '@mui/icons-material';
 import { StickyNoteData } from '../../components/StickyNote';
+import { useMobileNoteEditor } from '../hooks/useMobileKeyboard';
+import { HapticFeedback } from '../utils/gestures';
 
 interface MobileStickyNoteProps {
   note: StickyNoteData;
