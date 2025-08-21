@@ -101,7 +101,7 @@ export default function InviteTeamMemberDialog({
       setInvitations([{ email: '', role: 'member' }]);
       onClose();
     } catch (error) {
-      console.error('Failed to send invitations:', error);
+      // Handle invitation send error
     } finally {
       setIsLoading(false);
     }
