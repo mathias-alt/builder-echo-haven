@@ -79,7 +79,6 @@ export const menuSections: MenuSection[] = [
         icon: ExportIcon,
         action: () => {
           // Handle export action
-          console.log('Export data');
         },
       },
       {
