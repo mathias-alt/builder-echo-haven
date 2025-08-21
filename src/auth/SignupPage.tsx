@@ -352,8 +352,7 @@ export default function SignupPage() {
   };
 
   return (
-    <AppTheme>
-      <Box
+    <Box
         sx={{
           minHeight: '100vh',
           display: 'flex',
@@ -603,7 +602,6 @@ export default function SignupPage() {
             </Card>
           </Fade>
         </Container>
-      </Box>
-    </AppTheme>
+    </Box>
   );
 }
